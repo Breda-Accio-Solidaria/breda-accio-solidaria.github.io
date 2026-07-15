@@ -12,6 +12,7 @@ export const site = {
   registrationNumber: '79948',
   registrationResolutionDate: '3 de juliol de 2026',
   location: 'Breda, la Selva (Girona)',
+  isPreview: true,
 };
 
 export const mainNavigation = [

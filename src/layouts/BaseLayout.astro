@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
+import PreviewBanner from '../components/PreviewBanner.astro';
 import '../styles/global.css';
 import { site } from '../data/site';
 
@@ -54,6 +55,7 @@ const socialImage = new URL(image, Astro.site ?? Astro.url);
   </head>
   <body>
     <a class="skip-link" href="#contingut">Ves al contingut principal</a>
+    <PreviewBanner />
     <Header />
     <main id="contingut"><slot /></main>
     <Footer />

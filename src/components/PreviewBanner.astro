@@ -1,0 +1,51 @@
+---
+import { site } from '../data/site';
+---
+
+{site.isPreview && (
+  <aside class="preview-banner" role="status">
+    <div class="container preview-inner">
+      <strong>Versió de prova</strong>
+      <span>
+        Els continguts d’aquesta web no són oficials. S’han creat únicament
+        per visualitzar-ne el disseny, l’estructura i les funcionalitats abans
+        de definir la versió definitiva.
+      </span>
+    </div>
+  </aside>
+)}
+
+<style>
+  .preview-banner {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    border-top: 4px solid var(--color-red);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .preview-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding-block: 0.65rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .preview-inner strong {
+    padding: 0.15rem 0.45rem;
+    background: var(--color-red);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .preview-inner {
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+  }
+</style>
