@@ -1,0 +1,70 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Badge from '../../components/Badge.astro';
+import { formatDateTime } from '../../utils/format';
+
+export async function getStaticPaths() {
+  const items = await getCollection('agenda', ({ data }) => !data.draft);
+  return items.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<ArticleLayout
+  title={item.data.title}
+  summary={item.data.summary}
+  eyebrow="Agenda"
+  meta={formatDateTime(item.data.startDate)}
+  isPlaceholder={item.data.isPlaceholder}
+  image={item.data.image}
+  imageAlt={item.data.imageAlt}
+>
+  <dl class="event-details">
+    <div><dt>Estat</dt><dd><Badge tone={item.data.status === 'cancel·lada' ? 'red' : item.data.status === 'finalitzada' ? 'neutral' : 'mint'}>{item.data.status}</Badge></dd></div>
+    <div><dt>Data i hora</dt><dd>{formatDateTime(item.data.startDate)}</dd></div>
+    <div><dt>Lloc</dt><dd>{item.data.location}</dd></div>
+    <div><dt>Organitza</dt><dd>{item.data.organizers.join(', ')}</dd></div>
+  </dl>
+  {item.data.calendarFile && (
+    <p><a class="calendar-link" href={item.data.calendarFile} download>Afegeix l'activitat al calendari (.ics)</a></p>
+  )}
+  <Content />
+  {item.data.externalUrl && <p><a href={item.data.externalUrl} rel="external">Més informació o inscripció</a></p>}
+</ArticleLayout>
+
+<style>
+  .event-details {
+    margin: 0 0 2rem;
+    padding: 1.2rem;
+    background: var(--color-cream);
+    border-left: 6px solid var(--color-green);
+  }
+
+  .event-details div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 0.8rem;
+    padding-block: 0.45rem;
+  }
+
+  dt { font-weight: 850; }
+  dd { margin: 0; }
+
+  .calendar-link {
+    display: inline-flex;
+    padding: 0.75rem 1rem;
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    font-weight: 800;
+  }
+
+  @media (max-width: 36rem) {
+    .event-details div {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+</style>

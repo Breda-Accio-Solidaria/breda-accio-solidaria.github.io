@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Breda Acció Solidària//Agenda BAS//CA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:gaza-i-nosaltres-20261003@bredaacciosolidaria
+DTSTAMP:20260715T100000Z
+DTSTART;TZID=Europe/Madrid:20261003T183000
+DTEND;TZID=Europe/Madrid:20261003T223000
+SUMMARY:[Exemple] Gaza i nosaltres: jornada solidària
+LOCATION:Plaça de la Vila i Centre Cívic de Breda
+DESCRIPTION:Debat\, materials\, documental\, sopar popular i recollida de suport.
+END:VEVENT
+END:VCALENDAR

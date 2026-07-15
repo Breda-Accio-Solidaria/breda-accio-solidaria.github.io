@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Participa">
+  <PageHeader
+    eyebrow="Participa"
+    title="BAS es construeix amb temps, idees i compromís"
+    intro="No cal tenir experiència prèvia. Pots començar assistint a una activitat, col·laborant en una tasca concreta o proposant un tema."
+    dark
+  />
+
+  <section class="section">
+    <div class="container grid-3">
+      <article>
+        <span>01</span>
+        <h2>Vine a una activitat</h2>
+        <p>Les xerrades, cinefòrums i actes públics són oberts. Consulta l'agenda i comparteix les convocatòries.</p>
+        <a href="/agenda/">Veure l'agenda →</a>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Col·labora en un grup</h2>
+        <p>Pots ajudar en continguts, logística, comunicació, fotografia, disseny, traducció o relació amb altres entitats.</p>
+        <a href={`mailto:${site.email}?subject=Vull%20col%C2%B7laborar%20amb%20BAS`}>Escriu-nos →</a>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Fes-te soci o sòcia</h2>
+        <p>Les persones associades participen en l'Assemblea General, poden formar grups de treball i contribuir a definir les prioritats.</p>
+        <a href={`mailto:${site.email}?subject=Informaci%C3%B3%20per%20fer-me%20soci%20o%20s%C3%B2cia`}>Demana informació →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section proposal">
+    <div class="container split">
+      <SectionHeading eyebrow="Proposa" title="Porta una idea a BAS" />
+      <div>
+        <p class="lead">
+          Ens pots proposar una xerrada, una campanya, un cinefòrum, una activitat ambiental
+          o una col·laboració amb una altra entitat.
+        </p>
+        <ol>
+          <li>Explica breument el tema i per què és rellevant.</li>
+          <li>Indica el format que imagines i les persones o col·lectius implicats.</li>
+          <li>Digues com t'agradaria participar en l'organització.</li>
+        </ol>
+        <ButtonLink href={`mailto:${site.email}?subject=Proposta%20d%27activitat%20per%20a%20BAS`} variant="primary">
+          Envia una proposta
+        </ButtonLink>
+      </div>
+    </div>
+  </section>
+
+  <section class="section principles">
+    <div class="container">
+      <SectionHeading eyebrow="Cultura associativa" title="Com volem treballar" />
+      <div class="grid-4">
+        <div><strong>Respecte</strong><p>Debat ferm sense deshumanitzar ni anul·lar la discrepància.</p></div>
+        <div><strong>Corresponsabilitat</strong><p>Les tasques es comparteixen i els compromisos es fan explícits.</p></div>
+        <div><strong>Transparència</strong><p>Les decisions i els recursos es gestionen democràticament.</p></div>
+        <div><strong>Cura</strong><p>Els ritmes, les capacitats i les situacions personals també compten.</p></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  article {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--color-border-strong);
+  }
+
+  article span {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    color: var(--color-red);
+  }
+
+  article h2 {
+    font-size: 1.55rem;
+  }
+
+  article a {
+    color: var(--color-ink);
+    font-weight: 850;
+  }
+
+  .proposal {
+    background: var(--color-cream);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .lead {
+    font-size: var(--text-lead);
+  }
+
+  .principles .grid-4 > div {
+    padding: 1.25rem;
+    border-top: 5px solid var(--color-green);
+    background: var(--color-vanilla);
+  }
+
+  .principles strong {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+  }
+
+  @media (max-width: 48rem) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

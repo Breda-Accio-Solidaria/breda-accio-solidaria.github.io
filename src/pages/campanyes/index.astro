@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import CampaignCard from '../../components/CampaignCard.astro';
+
+const items = (await getCollection('campanyes', ({ data }) => !data.draft))
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
+---
+
+<BaseLayout title="Campanyes">
+  <PageHeader
+    eyebrow="Campanyes"
+    title="Línies d'acció sostingudes"
+    intro="Les campanyes agrupen activitats, materials i propostes de participació al voltant d'una causa compartida."
+  />
+
+  <section class="section">
+    <div class="container grid-3">
+      {items.map((item) => <CampaignCard item={item} />)}
+    </div>
+  </section>
+</BaseLayout>

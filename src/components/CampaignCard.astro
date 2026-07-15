@@ -1,0 +1,127 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Badge from './Badge.astro';
+import { humanize } from '../utils/format';
+
+interface Props {
+  item: CollectionEntry<'campanyes'>;
+}
+const { item } = Astro.props;
+---
+
+<article class="campaign-card">
+  {item.data.image && (
+    <a class="image" href={`/campanyes/${item.id}/`} tabindex="-1" aria-hidden="true">
+      <img src={item.data.image} alt="" loading="lazy" />
+    </a>
+  )}
+  <div class="stripe" aria-hidden="true"></div>
+  <div class="body">
+    <div class="meta">
+      <Badge tone={item.data.status === 'activa' ? 'red' : item.data.status === 'permanent' ? 'green' : 'neutral'}>
+        {humanize(item.data.status)}
+      </Badge>
+      {item.data.isPlaceholder && <Badge tone="purple">Exemple</Badge>}
+    </div>
+    <h3><a href={`/campanyes/${item.id}/`}>{item.data.title}</a></h3>
+    <p>{item.data.summary}</p>
+    {item.data.topics.length > 0 && (
+      <ul aria-label="Temes">
+        {item.data.topics.map((topic) => <li>{topic}</li>)}
+      </ul>
+    )}
+    <a class="read-more" href={`/campanyes/${item.id}/`}>Veure la campanya <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+
+<style>
+  .campaign-card {
+    position: relative;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--color-border-strong);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  .campaign-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.8rem 2rem rgb(61 52 52 / 0.12);
+  }
+
+  .image {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .stripe {
+    height: 0.45rem;
+    background: linear-gradient(90deg, var(--color-red) 0 38%, var(--color-green) 38% 66%, var(--color-ink) 66%);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  h3 {
+    margin: 1rem 0 0;
+    font-size: 1.65rem;
+    line-height: 1.08;
+  }
+
+  h3 a {
+    color: var(--color-ink);
+    text-decoration-color: transparent;
+  }
+
+  h3 a:hover {
+    text-decoration-color: var(--color-red);
+  }
+
+  p {
+    color: var(--color-muted);
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.15rem 0 0;
+  }
+
+  li {
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: var(--color-cream);
+    font-size: 0.75rem;
+    font-weight: 750;
+  }
+
+  .read-more {
+    display: inline-flex;
+    margin-top: auto;
+    padding-top: 1.35rem;
+    color: var(--color-ink);
+    font-weight: 850;
+    text-underline-offset: 0.2em;
+  }
+</style>

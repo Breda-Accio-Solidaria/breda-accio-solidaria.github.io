@@ -1,0 +1,29 @@
+---
+interface Props {
+  tone?: 'red' | 'green' | 'mint' | 'strawberry' | 'neutral' | 'purple';
+}
+const { tone = 'neutral' } = Astro.props;
+---
+<span class:list={['badge', tone]}><slot /></span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.7rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.035em;
+  }
+
+  .red { background: var(--color-red); color: white; }
+  .green { background: var(--color-green); color: var(--color-ink); }
+  .mint { background: var(--color-mint); color: var(--color-ink); }
+  .strawberry { background: var(--color-strawberry); color: var(--color-ink); }
+  .purple { background: var(--color-purple); color: var(--color-ink); }
+  .neutral { background: #e7e1d7; color: var(--color-ink); }
+</style>

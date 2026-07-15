@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { formatDate, humanize } from '../../utils/format';
+
+export async function getStaticPaths() {
+  const items = await getCollection('actualitat', ({ data }) => !data.draft);
+  return items.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+
+<ArticleLayout
+  title={item.data.title}
+  summary={item.data.summary}
+  eyebrow={humanize(item.data.type)}
+  meta={formatDate(item.data.publishedAt)}
+  isPlaceholder={item.data.isPlaceholder}
+  topics={item.data.topics}
+  image={item.data.image}
+  imageAlt={item.data.imageAlt}
+>
+  <Content />
+</ArticleLayout>

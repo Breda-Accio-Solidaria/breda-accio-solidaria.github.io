@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Accessibilitat">
+  <PageHeader eyebrow="Informació" title="Accessibilitat" />
+
+  <section class="section">
+    <div class="container prose">
+      <p>
+        Breda Acció Solidària vol que aquest web sigui usable per al màxim nombre de persones,
+        independentment del dispositiu, la connexió o les capacitats d'accés.
+      </p>
+
+      <h2>Mesures incorporades</h2>
+      <ul>
+        <li>Estructura semàntica amb encapçalaments i regions de navegació clares.</li>
+        <li>Enllaç per saltar directament al contingut principal.</li>
+        <li>Navegació completa amb teclat i indicadors de focus visibles.</li>
+        <li>Contrast elevat entre text, fons i elements interactius.</li>
+        <li>Tipografia fluida i línies de text amb amplada limitada.</li>
+        <li>Disseny adaptable a ordinadors, tauletes i mòbils.</li>
+        <li>Respecte per la preferència de moviment reduït del sistema.</li>
+        <li>Textos alternatius per a les imatges informatives.</li>
+      </ul>
+
+      <h2>Compatibilitat</h2>
+      <p>
+        El web està construït amb HTML estàndard i CSS responsiu, sense que JavaScript sigui
+        necessari per accedir al contingut o utilitzar la navegació principal.
+      </p>
+
+      <h2>Comunicació d'incidències</h2>
+      <p>
+        Si trobes una barrera d'accés o un contingut difícil d'utilitzar, escriu a
+        <a href={`mailto:${site.email}?subject=Accessibilitat%20del%20web`}> {site.email}</a>
+        indicant la pàgina i el problema detectat.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Avís legal">
+  <PageHeader eyebrow="Informació legal" title="Avís legal" />
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Identificació del titular</h2>
+      <p>
+        Aquest lloc web és titularitat de <strong>Breda Acció Solidària (BAS)</strong>, associació
+        inscrita al Registre d'Associacions de Girona amb el número {site.registrationNumber}.
+      </p>
+      <ul>
+        <li>Àmbit: {site.location}</li>
+        <li>Correu de contacte: <a href={`mailto:${site.email}`}>{site.email}</a></li>
+      </ul>
+
+      <h2>Finalitat del web</h2>
+      <p>
+        El web informa sobre les finalitats, les activitats, les campanyes i el funcionament de
+        BAS, i facilita el contacte i la participació en l'associació.
+      </p>
+
+      <h2>Responsabilitat dels continguts</h2>
+      <p>
+        BAS procura que la informació publicada sigui clara i actualitzada. Els continguts
+        d'opinió, anàlisi o debat expressen el marc de treball de l'associació i poden incloure
+        enllaços a fonts externes. BAS no controla la disponibilitat ni el contingut d'aquests
+        llocs externs.
+      </p>
+
+      <h2>Propietat intel·lectual</h2>
+      <p>
+        Els textos i materials propis poden ser compartits amb finalitats informatives i no
+        comercials, citant Breda Acció Solidària i mantenint la integritat del contingut. Les
+        fotografies, cartells i materials de tercers conserven els drets dels seus autors.
+      </p>
+
+      <h2>Ús del lloc</h2>
+      <p>
+        No es pot utilitzar aquest web per difondre continguts il·lícits, vulnerar drets de
+        tercers, intentar accedir a sistemes restringits o interferir en el funcionament del lloc.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

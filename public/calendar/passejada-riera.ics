@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Breda Acció Solidària//Agenda BAS//CA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:passejada-riera-20261024@bredaacciosolidaria
+DTSTAMP:20260715T100000Z
+DTSTART;TZID=Europe/Madrid:20261024T100000
+DTEND;TZID=Europe/Madrid:20261024T130000
+SUMMARY:[Exemple] Passejada per la riera: biodiversitat i residus
+LOCATION:Plaça de la Vila de Breda
+DESCRIPTION:Recorregut participatiu per observar l'estat de la riera i recollir propostes d'acció local.
+END:VEVENT
+END:VCALENDAR

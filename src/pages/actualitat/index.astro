@@ -1,0 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import NewsCard from '../../components/NewsCard.astro';
+
+const items = (await getCollection('actualitat', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+
+<BaseLayout title="Actualitat">
+  <PageHeader
+    eyebrow="Actualitat"
+    title="Notícies, cròniques i pensament crític"
+    intro="Recollim l'activitat de BAS, els materials de les campanyes i textos que ajuden a situar els debats."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="filters" aria-label="Filtra per tipus de contingut">
+        <button class="filter-button is-active" type="button" data-filter="all">
+          Tots els continguts
+        </button>
+
+        <button class="filter-button" type="button" data-filter="noticia">
+          Notícies
+        </button>
+
+        <button class="filter-button" type="button" data-filter="cronica">
+          Cròniques
+        </button>
+
+        <button class="filter-button" type="button" data-filter="article">
+          Articles
+        </button>
+
+        <button class="filter-button" type="button" data-filter="comunicat">
+          Comunicats
+        </button>
+      </div>
+
+      <p class="results-message" aria-live="polite"></p>
+
+      <div class="grid-3" id="actualitat-grid">
+        {
+          items.map((item) => (
+            <div
+              class="news-item"
+              data-content-type={item.data.type}
+            >
+              <NewsCard item={item} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = Array.from(
+      document.querySelectorAll<HTMLButtonElement>('.filter-button')
+    );
+
+    const items = Array.from(
+      document.querySelectorAll<HTMLElement>('.news-item')
+    );
+
+    const resultsMessage =
+      document.querySelector<HTMLElement>('.results-message');
+
+    function applyFilter(filter: string) {
+      let visibleCount = 0;
+
+      items.forEach((item) => {
+        const type = item.dataset.contentType;
+        const visible = filter === 'all' || type === filter;
+
+        item.hidden = !visible;
+
+        if (visible) {
+          visibleCount += 1;
+        }
+      });
+
+      buttons.forEach((button) => {
+        const active = button.dataset.filter === filter;
+
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+
+      if (resultsMessage) {
+        resultsMessage.textContent =
+          visibleCount === 1
+            ? '1 contingut'
+            : `${visibleCount} continguts`;
+      }
+
+      const url = new URL(window.location.href);
+
+      if (filter === 'all') {
+        url.searchParams.delete('tipus');
+      } else {
+        url.searchParams.set('tipus', filter);
+      }
+
+      window.history.replaceState({}, '', url);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyFilter(button.dataset.filter ?? 'all');
+      });
+    });
+
+    const initialFilter =
+      new URL(window.location.href).searchParams.get('tipus') ?? 'all';
+
+    const validFilters = buttons.map((button) => button.dataset.filter);
+
+    applyFilter(
+      validFilters.includes(initialFilter)
+        ? initialFilter
+        : 'all'
+    );
+  </script>
+</BaseLayout>
+
+<style>
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .filter-button {
+    appearance: none;
+    padding: 0.55rem 0.8rem;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 750;
+    cursor: pointer;
+  }
+
+  .filter-button:hover {
+    border-color: var(--color-ink);
+  }
+
+  .filter-button:focus-visible {
+    outline: 3px solid var(--color-green);
+    outline-offset: 3px;
+  }
+
+  .filter-button.is-active {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    border-color: var(--color-ink);
+  }
+
+  .results-message {
+    min-height: 1.5rem;
+    margin: 0 0 1.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+  }
+
+  .news-item[hidden] {
+    display: none;
+  }
+</style>

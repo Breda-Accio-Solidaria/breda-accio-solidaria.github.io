@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ButtonLink from '../../components/ButtonLink.astro';
+---
+
+<BaseLayout title="L'associació">
+  <PageHeader
+    eyebrow="L'associació"
+    title="Una entitat local amb vocació transformadora"
+    intro="Breda Acció Solidària és una associació social i política sense ànim de lucre, arrelada a Breda i oberta a la participació ciutadana."
+    dark
+  />
+
+  <section class="section">
+    <div class="container split">
+      <SectionHeading eyebrow="Qui som" title="Organitzar-nos per entendre i actuar" />
+      <div class="prose">
+        <p>
+          BAS reuneix persones amb trajectòries i sensibilitats diverses que comparteixen una
+          convicció: davant les injustícies, no n'hi ha prou amb observar. Cal informar-se,
+          debatre, teixir complicitats i construir formes d'acció col·lectiva.
+        </p>
+        <p>
+          L'associació organitza xerrades públiques, cinefòrums, cercles d'estudi, campanyes,
+          actes solidaris i mobilitzacions. Les activitats connecten qüestions globals amb la
+          realitat local de Breda i el Baix Montseny.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section values">
+    <div class="container">
+      <SectionHeading eyebrow="Finalitats" title="Els compromisos que orienten BAS" />
+      <div class="grid-3">
+        <article>
+          <h3>Solidaritat</h3>
+          <p>Impulsem activitats i recollides de suport per a projectes i causes de cooperació i justícia global.</p>
+        </article>
+        <article>
+          <h3>Drets humans</h3>
+          <p>Difonem i defensem els drets humans davant l'ocupació, la guerra, el racisme i qualsevol forma de discriminació.</p>
+        </article>
+        <article>
+          <h3>Sensibilització</h3>
+          <p>Obrim espais públics per comprendre conflictes, problemàtiques mundials i discursos que amenacen la convivència democràtica.</p>
+        </article>
+        <article>
+          <h3>Palestina i Cuba</h3>
+          <p>Mantenim una solidaritat activa amb els pobles palestí i cubà, tal com estableixen les finalitats fundacionals de l'associació.</p>
+        </article>
+        <article>
+          <h3>Medi ambient</h3>
+          <p>Defensem el territori, la biodiversitat, la sobirania alimentària i una transició ecològica socialment justa.</p>
+        </article>
+        <article>
+          <h3>Participació</h3>
+          <p>Promovem una organització democràtica basada en l'assemblea, els grups de treball i la responsabilitat compartida.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section organization">
+    <div class="container split">
+      <div>
+        <SectionHeading eyebrow="Com ens organitzem" title="Assemblea, Junta i grups de treball" />
+        <ButtonLink href="/associacio/organitzacio/" variant="secondary">Veure el funcionament</ButtonLink>
+      </div>
+      <div class="prose">
+        <p>
+          L'Assemblea General és l'òrgan sobirà de BAS. Aprova les línies de treball, els comptes,
+          els pressupostos i l'elecció de la Junta Directiva.
+        </p>
+        <p>
+          Les activitats concretes es preparen mitjançant grups de treball oberts, que reparteixen
+          tasques de contingut, logística, comunicació i relació amb altres entitats.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section join">
+    <div class="container join-inner">
+      <div>
+        <p class="eyebrow">Forma'n part</p>
+        <h2>Una associació creix quan més persones hi aporten idees, temps i experiència.</h2>
+      </div>
+      <ButtonLink href="/participa/" variant="light">Participa a BAS</ButtonLink>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .values {
+    background: var(--color-cream);
+  }
+
+  .values article {
+    padding: 1.5rem;
+    background: white;
+    border-left: 5px solid var(--color-red);
+  }
+
+  .values article:nth-child(even) {
+    border-left-color: var(--color-green);
+  }
+
+  .values h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .organization {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .join {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+  }
+
+  .join-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .join .eyebrow {
+    color: var(--color-mint);
+    text-transform: uppercase;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+  }
+
+  .join h2 {
+    max-width: 22ch;
+    margin: 0;
+    font-size: var(--text-h2);
+    line-height: 1.03;
+  }
+
+  @media (max-width: 48rem) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+
+    .join-inner {
+      display: grid;
+      align-items: start;
+    }
+  }
+</style>

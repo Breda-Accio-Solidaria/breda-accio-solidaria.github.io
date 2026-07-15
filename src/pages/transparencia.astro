@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Transparència">
+  <PageHeader
+    eyebrow="Transparència"
+    title="Informació institucional i funcionament democràtic"
+    intro="La transparència forma part de la manera de treballar de BAS: finalitats clares, decisions col·lectives i rendició de comptes."
+  />
+
+  <section class="section facts">
+    <div class="container grid-4">
+      <div><strong>Breda Acció Solidària</strong><span>Denominació oficial</span></div>
+      <div><strong>{site.registrationNumber}</strong><span>Número d'inscripció</span></div>
+      <div><strong>{site.registrationResolutionDate}</strong><span>Resolució registral</span></div>
+      <div><strong>Catalunya</strong><span>Àmbit principal d'actuació</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="estatuts">
+    <div class="container split">
+      <SectionHeading eyebrow="Estatuts" title="Finalitats i marc de funcionament" />
+      <div class="prose">
+        <p>
+          BAS regula les seves activitats d'acord amb la legislació catalana d'associacions i
+          amb els estatuts inscrits al Registre d'Associacions de Girona.
+        </p>
+        <h3>Finalitats principals</h3>
+        <ul>
+          <li>Organitzar activitats solidàries i aconseguir suport per a projectes de cooperació.</li>
+          <li>Mantenir la solidaritat amb el poble palestí i amb el poble de Cuba.</li>
+          <li>Sensibilitzar sobre conflictes i problemàtiques mundials.</li>
+          <li>Difondre i defensar els drets humans.</li>
+          <li>Defensar el medi ambient.</li>
+        </ul>
+        <h3>Activitats</h3>
+        <p>
+          Per assolir aquestes finalitats, l'associació pot organitzar xerrades públiques,
+          cinefòrums, manifestacions i altres activitats de sensibilització i recaptació de fons.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section governance">
+    <div class="container">
+      <SectionHeading eyebrow="Governança" title="Òrgans i responsabilitats" />
+      <div class="grid-3">
+        <article>
+          <h3>Assemblea General</h3>
+          <p>Òrgan sobirà. Aprova la gestió, els comptes, el pressupost, les quotes i les línies generals de l'associació.</p>
+        </article>
+        <article>
+          <h3>Junta Directiva</h3>
+          <p>Representa i administra BAS, executa els acords de l'Assemblea i coordina el funcionament ordinari.</p>
+        </article>
+        <article>
+          <h3>Grups de treball</h3>
+          <p>Desenvolupen activitats i campanyes concretes, amb seguiment de la Junta i informació periòdica sobre les actuacions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section finance">
+    <div class="container split">
+      <SectionHeading eyebrow="Règim econòmic" title="Recursos i control" />
+      <div class="prose">
+        <p>Els recursos de l'associació poden provenir de:</p>
+        <ul>
+          <li>quotes de les persones associades;</li>
+          <li>subvencions oficials o particulars;</li>
+          <li>donacions i llegats;</li>
+          <li>rendiments del patrimoni o altres ingressos compatibles amb les finalitats de BAS.</li>
+        </ul>
+        <p>
+          L'exercici econòmic coincideix amb l'any natural. La Junta prepara el pressupost i
+          els comptes anuals, que són sotmesos a l'aprovació de l'Assemblea General.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section documents">
+    <div class="container">
+      <SectionHeading eyebrow="Documents" title="Informació pública" />
+      <div class="grid-3">
+        <a href="#estatuts"><strong>Estatuts socials</strong><span>Finalitats, drets, deures i òrgans de govern</span></a>
+        <a href="/associacio/organitzacio/"><strong>Organització</strong><span>Funcionament de l'Assemblea, la Junta i els grups</span></a>
+        <a href="/actualitat/"><strong>Memòria pública d'activitat</strong><span>Cròniques, campanyes i activitats realitzades</span></a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .facts {
+    padding-block: 2rem;
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+  }
+
+  .facts div > div {
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .facts strong {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+  }
+
+  .facts span {
+    color: var(--color-mint);
+    font-size: 0.82rem;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .governance {
+    background: var(--color-cream);
+  }
+
+  .governance article {
+    padding: 1.5rem;
+    background: white;
+    border-top: 5px solid var(--color-green);
+  }
+
+  .documents {
+    background: var(--color-mint);
+  }
+
+  .documents a {
+    display: grid;
+    gap: 0.45rem;
+    min-height: 10rem;
+    padding: 1.4rem;
+    background: var(--color-vanilla);
+    color: var(--color-ink);
+    text-decoration: none;
+    border: 1px solid var(--color-border-strong);
+  }
+
+  .documents strong {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+  }
+
+  @media (max-width: 48rem) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,16 @@
+{
+  "name": "Breda Acció Solidària",
+  "short_name": "BAS",
+  "description": "Sensibilització, solidaritat i medi ambient des de Breda.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFDF0",
+  "theme_color": "#3D3434",
+  "icons": [
+    {
+      "src": "/images/logo-bas-square.png",
+      "sizes": "720x720",
+      "type": "image/png"
+    }
+  ]
+}

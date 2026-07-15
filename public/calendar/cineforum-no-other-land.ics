@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Breda Acció Solidària//Agenda BAS//CA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:cineforum-no-other-land-20260918@bredaacciosolidaria
+DTSTAMP:20260715T100000Z
+DTSTART;TZID=Europe/Madrid:20260918T190000
+DTEND;TZID=Europe/Madrid:20260918T213000
+SUMMARY:[Exemple] Cinefòrum: No Other Land
+LOCATION:Centre Cultural Els Forns\, Breda
+DESCRIPTION:Projecció i conversa posterior sobre ocupació\, desplaçament forçat i resistència comunitària.
+END:VEVENT
+END:VCALENDAR

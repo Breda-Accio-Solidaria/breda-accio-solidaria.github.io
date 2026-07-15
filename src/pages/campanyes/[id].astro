@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Badge from '../../components/Badge.astro';
+import { humanize, formatDate } from '../../utils/format';
+
+export async function getStaticPaths() {
+  const items = await getCollection('campanyes', ({ data }) => !data.draft);
+  return items.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+const dateRange = [item.data.startDate && formatDate(item.data.startDate), item.data.endDate && formatDate(item.data.endDate)]
+  .filter(Boolean)
+  .join(' — ');
+---
+
+<ArticleLayout
+  title={item.data.title}
+  summary={item.data.summary}
+  eyebrow="Campanya"
+  meta={dateRange || undefined}
+  isPlaceholder={item.data.isPlaceholder}
+  topics={item.data.topics}
+  image={item.data.image}
+  imageAlt={item.data.imageAlt}
+>
+  <p><Badge tone={item.data.status === 'activa' ? 'red' : item.data.status === 'permanent' ? 'green' : 'neutral'}>{humanize(item.data.status)}</Badge></p>
+  <Content />
+  {item.data.callToAction && (
+    <aside class="cta">
+      <h2>Com participar-hi</h2>
+      <p>{item.data.callToAction}</p>
+      <p><a href="/contacte/">Contacta amb BAS</a></p>
+    </aside>
+  )}
+  {item.data.relatedLinks.length > 0 && (
+    <section>
+      <h2>Recursos relacionats</h2>
+      <ul>
+        {item.data.relatedLinks.map((link) => <li><a href={link.url} rel="external">{link.label}</a></li>)}
+      </ul>
+    </section>
+  )}
+</ArticleLayout>
+
+<style>
+  .cta {
+    margin-top: 2.5rem;
+    padding: 1.4rem;
+    background: var(--color-mint);
+    border-left: 7px solid var(--color-green);
+  }
+</style>

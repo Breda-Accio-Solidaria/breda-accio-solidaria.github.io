@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Contacte">
+  <PageHeader
+    eyebrow="Contacte"
+    title="Parlem"
+    intro="Contacta amb BAS per proposar una activitat, col·laborar, fer-te soci o sòcia o demanar informació."
+    dark
+  />
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-card">
+        <p class="label">Correu electrònic</p>
+        <h2><a href={`mailto:${site.email}`}>{site.email}</a></h2>
+        <p>És el canal principal per a consultes, propostes i sol·licituds de participació.</p>
+      </div>
+
+      <div class="contact-card">
+        <p class="label">Xarxes socials</p>
+        <ul>
+          <li><a href={site.instagram} rel="external">Instagram: @bredaacciosolidaria</a></li>
+          <li><a href={site.facebook} rel="external">Facebook: Breda Acció Solidària</a></li>
+        </ul>
+        <p>Hi publiquem convocatòries, materials de campanya i cròniques breus.</p>
+      </div>
+
+      <div class="contact-card">
+        <p class="label">Àmbit local</p>
+        <h2>{site.location}</h2>
+        <p>Les activitats es fan habitualment en equipaments i espais públics de Breda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section topics">
+    <div class="container">
+      <h2>Per facilitar la resposta</h2>
+      <p>Al missatge, indica el motiu del contacte:</p>
+      <div class="grid-4">
+        <a href={`mailto:${site.email}?subject=Proposta%20d%27activitat`}>Proposta d'activitat</a>
+        <a href={`mailto:${site.email}?subject=Vull%20col%C2%B7laborar`}>Vull col·laborar</a>
+        <a href={`mailto:${site.email}?subject=Informaci%C3%B3%20per%20associar-me`}>Fer-me soci o sòcia</a>
+        <a href={`mailto:${site.email}?subject=Proposta%20de%20col%C2%B7laboraci%C3%B3`}>Col·laboració entre entitats</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .contact-card {
+    min-height: 19rem;
+    padding: clamp(1.4rem, 4vw, 2.5rem);
+    background: white;
+    border: 1px solid var(--color-border-strong);
+    border-top: 6px solid var(--color-red);
+  }
+
+  .contact-card:nth-child(2) {
+    border-top-color: var(--color-green);
+  }
+
+  .contact-card:nth-child(3) {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    border-top-color: var(--color-mint);
+  }
+
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.76rem;
+    font-weight: 850;
+  }
+
+  h2 {
+    font-size: clamp(1.45rem, 3vw, 2.15rem);
+  }
+
+  .contact-card a {
+    color: inherit;
+  }
+
+  .topics {
+    background: var(--color-cream);
+  }
+
+  .topics h2 {
+    font-size: var(--text-h2);
+  }
+
+  .topics .grid-4 a {
+    display: grid;
+    place-items: center;
+    min-height: 7rem;
+    padding: 1rem;
+    background: var(--color-vanilla);
+    color: var(--color-ink);
+    font-weight: 850;
+    text-align: center;
+    border: 1px solid var(--color-border-strong);
+  }
+
+  @media (max-width: 56rem) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

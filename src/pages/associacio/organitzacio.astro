@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Organització i funcionament">
+  <PageHeader
+    eyebrow="L'associació"
+    title="Organització i funcionament"
+    intro="BAS funciona de manera democràtica mitjançant l'Assemblea General, la Junta Directiva i els grups de treball."
+  />
+
+  <section class="section">
+    <div class="container grid-3">
+      <article>
+        <span>01</span>
+        <h2>Assemblea General</h2>
+        <p>
+          És l'òrgan sobirà de l'associació. Cada membre hi té veu i vot. Aprova la gestió,
+          el pressupost, els comptes anuals, les línies de treball i l'elecció de la Junta.
+        </p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Junta Directiva</h2>
+        <p>
+          Regeix, administra i representa l'associació entre assemblees. Està formada per
+          presidència, secretaria, tresoreria i vocalies, amb càrrecs exercits gratuïtament.
+        </p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Grups de treball</h2>
+        <p>
+          Prepararen campanyes i activitats concretes. Les persones associades poden proposar
+          la seva creació i incorporar-s'hi segons els seus interessos i disponibilitat.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+      <SectionHeading eyebrow="Participació interna" title="Com passa una idea a convertir-se en activitat" />
+      <ol>
+        <li><strong>Proposta.</strong> Una persona o un grup planteja un tema, una campanya o una activitat.</li>
+        <li><strong>Debat.</strong> Es concreta l'objectiu, el format, les aliances i els recursos necessaris.</li>
+        <li><strong>Organització.</strong> Es distribueixen responsabilitats de contingut, logística, comunicació i acollida.</li>
+        <li><strong>Acció pública.</strong> L'activitat es difon i s'obre a la participació de Breda i l'entorn.</li>
+        <li><strong>Valoració.</strong> El grup revisa el resultat i recull aprenentatges per a futures iniciatives.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section rights">
+    <div class="container split">
+      <SectionHeading eyebrow="Persones associades" title="Drets i responsabilitats" />
+      <div class="grid-2">
+        <div>
+          <h3>Drets</h3>
+          <ul>
+            <li>Participar amb veu i vot a l'Assemblea General.</li>
+            <li>Elegir i ser elegides per als càrrecs de l'associació.</li>
+            <li>Rebre informació sobre l'activitat i la gestió.</li>
+            <li>Formar part dels grups de treball.</li>
+            <li>Presentar propostes i demanar explicacions als òrgans de govern.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Responsabilitats</h3>
+          <ul>
+            <li>Compartir les finalitats de BAS i participar per assolir-les.</li>
+            <li>Respectar els acords adoptats democràticament.</li>
+            <li>Contribuir al sosteniment de l'associació segons els acords de l'Assemblea.</li>
+            <li>Afavorir una cultura de debat, cura i responsabilitat col·lectiva.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  article {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--color-border-strong);
+  }
+
+  article span {
+    font-family: var(--font-serif);
+    font-size: 2.7rem;
+    color: var(--color-red);
+  }
+
+  article h2 {
+    font-size: 1.65rem;
+  }
+
+  .process {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+  }
+
+  .process :global(.section-heading .eyebrow) {
+    color: var(--color-mint);
+  }
+
+  .process ol {
+    display: grid;
+    gap: 1rem;
+    max-width: 55rem;
+    padding-left: 1.4rem;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+  }
+
+  .rights h3 {
+    font-size: 1.45rem;
+  }
+
+  @media (max-width: 48rem) {
+    .split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,344 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import NewsCard from '../components/NewsCard.astro';
+import EventCard from '../components/EventCard.astro';
+import CampaignCard from '../components/CampaignCard.astro';
+
+const news = (await getCollection('actualitat', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 3);
+
+const events = (await getCollection('agenda', ({ data }) => !data.draft && data.status === 'programada'))
+  .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
+  .slice(0, 3);
+
+const campaigns = (await getCollection('campanyes', ({ data }) => !data.draft && data.featured))
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Breda · Acció cívica i solidària</p>
+        <h1>Solidaritat, consciència crítica i acció col·lectiva.</h1>
+        <p class="lead">
+          Breda Acció Solidària és una associació sense ànim de lucre que treballa des de Breda
+          per defensar els drets humans, la solidaritat internacional i el medi ambient.
+        </p>
+        <div class="cluster actions">
+          <ButtonLink href="/associacio/" variant="light">Coneix BAS</ButtonLink>
+          <ButtonLink href="/participa/" variant="red">Participa</ButtonLink>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="/images/hero-bas.webp"
+          width="1500"
+          height="960"
+          alt="Composició amb materials de campanyes de Breda Acció Solidària"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section identity">
+    <div class="container split">
+      <SectionHeading
+        eyebrow="Què ens mou"
+        title="Arrelament local, mirada global"
+        intro="BAS neix de la voluntat d'organitzar-nos col·lectivament davant les injustícies socials, els conflictes internacionals i la degradació ambiental."
+      />
+      <div class="identity-copy">
+        <p>
+          Organitzem xerrades, cinefòrums, cercles d'estudi, campanyes i activitats solidàries.
+          Volem crear espais per informar-nos, discutir amb rigor i convertir la reflexió en acció.
+        </p>
+        <p>
+          Treballem des de Breda i amb vocació oberta: col·laborem amb altres entitats, defensem
+          els drets humans i promovem una participació democràtica, crítica i respectuosa.
+        </p>
+        <a href="/associacio/">Més sobre l'associació <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section areas">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Àmbits d'acció"
+        title="Informar, mobilitzar i construir alternatives"
+      />
+      <div class="grid-4">
+        <article>
+          <span>01</span>
+          <h3>Drets humans</h3>
+          <p>Defensa activa dels drets i les llibertats, amb atenció als conflictes i a les vulneracions que sovint queden fora del debat local.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Solidaritat internacional</h3>
+          <p>Suport a Palestina, Cuba i altres pobles, projectes i iniciatives que lluiten contra l'ocupació, l'exclusió i la desigualtat.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Pensament crític</h3>
+          <p>Xerrades, lectures i cercles d'estudi per entendre l'extrema dreta, el racisme, les desigualtats i les formes contemporànies de poder.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Medi ambient</h3>
+          <p>Defensa del territori, la biodiversitat i uns sistemes alimentaris més justos, resilients i democràtics.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section campaigns">
+    <div class="container">
+      <div class="heading-row">
+        <SectionHeading eyebrow="Campanyes" title="Línies de treball obertes" />
+        <a href="/campanyes/">Totes les campanyes →</a>
+      </div>
+      <div class="grid-3">
+        {campaigns.map((item) => <CampaignCard item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section agenda">
+    <div class="container">
+      <div class="heading-row">
+        <SectionHeading eyebrow="Agenda" title="Properes activitats" />
+        <a href="/agenda/">Veure tota l'agenda →</a>
+      </div>
+      <div class="grid-3">
+        {events.map((item) => <EventCard item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section news">
+    <div class="container">
+      <div class="heading-row">
+        <SectionHeading eyebrow="Actualitat" title="Notícies, cròniques i anàlisi" />
+        <a href="/actualitat/">Anar a l'actualitat →</a>
+      </div>
+      <div class="grid-3">
+        {news.map((item) => <NewsCard item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="join">
+    <div class="container join-grid">
+      <div>
+        <p class="eyebrow">Participa</p>
+        <h2>BAS és un espai obert a les persones que volen implicar-se.</h2>
+      </div>
+      <div>
+        <p>
+          Pots assistir a les activitats, proposar una iniciativa, incorporar-te a un grup de
+          treball o fer-te soci o sòcia de l'associació.
+        </p>
+        <ButtonLink href="/participa/" variant="light">Com participar-hi</ButtonLink>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    border-bottom: 7px solid var(--color-green);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(28rem, 1.08fr);
+    min-height: min(48rem, calc(100vh - 5rem));
+    align-items: stretch;
+  }
+
+  .hero-copy {
+    display: grid;
+    align-content: center;
+    padding: clamp(4rem, 8vw, 8rem) clamp(2rem, 6vw, 6rem) clamp(4rem, 8vw, 8rem) 0;
+  }
+
+  .eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-mint);
+  }
+
+  h1 {
+    margin: 0;
+    max-width: 11ch;
+    font-size: var(--text-h1);
+    line-height: 0.96;
+    text-wrap: balance;
+  }
+
+  .lead {
+    max-width: 43rem;
+    margin: 1.5rem 0 0;
+    color: #eee7db;
+    font-size: var(--text-lead);
+  }
+
+  .actions {
+    margin-top: 2rem;
+  }
+
+  .hero-visual {
+    min-height: 32rem;
+    overflow: hidden;
+  }
+
+  .hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2.5rem, 8vw, 8rem);
+    align-items: start;
+  }
+
+  .identity-copy {
+    max-width: 48rem;
+    font-size: var(--text-lead);
+  }
+
+  .identity-copy p:first-child {
+    margin-top: 0;
+  }
+
+  .identity-copy a {
+    display: inline-flex;
+    margin-top: 1rem;
+    color: var(--color-ink);
+    font-weight: 850;
+  }
+
+  .areas {
+    background: var(--color-cream);
+    border-block: 1px solid var(--color-border);
+  }
+
+  .areas article {
+    min-height: 100%;
+    padding: 1.5rem;
+    background: var(--color-vanilla);
+    border-top: 5px solid var(--color-red);
+  }
+
+  .areas article:nth-child(even) {
+    border-top-color: var(--color-green);
+  }
+
+  .areas span {
+    font-family: var(--font-serif);
+    font-size: 2.6rem;
+    color: var(--color-border-strong);
+  }
+
+  .areas h3 {
+    margin: 0.7rem 0 0;
+    font-size: 1.55rem;
+  }
+
+  .heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .heading-row :global(.section-heading) {
+    margin-bottom: 0;
+  }
+
+  .heading-row > a {
+    flex: 0 0 auto;
+    color: var(--color-ink);
+    font-weight: 850;
+  }
+
+  .agenda {
+    background: var(--color-mint);
+  }
+
+  .join {
+    padding-block: clamp(4rem, 9vw, 7rem);
+    background: var(--color-red);
+    color: white;
+  }
+
+  .join-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+    gap: clamp(2rem, 8vw, 8rem);
+    align-items: end;
+  }
+
+  .join h2 {
+    margin: 0;
+    max-width: 18ch;
+    font-size: var(--text-h2);
+    line-height: 1.02;
+  }
+
+  .join p {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 68rem) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+      padding-right: 0;
+      min-height: 34rem;
+    }
+
+    .hero-visual {
+      min-height: 28rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    .split,
+    .join-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .heading-row {
+      display: grid;
+      gap: 0;
+    }
+
+    .hero-copy {
+      min-height: auto;
+      padding-block: 4rem;
+    }
+
+    .hero-visual {
+      min-height: 21rem;
+    }
+  }
+</style>

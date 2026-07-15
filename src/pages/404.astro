@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ButtonLink from '../components/ButtonLink.astro';
+---
+
+<BaseLayout title="Pàgina no trobada" noindex>
+  <section class="not-found">
+    <div class="container">
+      <p>404</p>
+      <h1>Aquesta pàgina no existeix</h1>
+      <span>Potser l'enllaç ha canviat o l'adreça no és correcta.</span>
+      <div>
+        <ButtonLink href="/" variant="light">Torna a l'inici</ButtonLink>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 70vh;
+    display: grid;
+    place-items: center;
+    padding-block: 5rem;
+    background: var(--color-ink);
+    color: var(--color-vanilla);
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(5rem, 15vw, 10rem);
+    color: var(--color-red);
+    line-height: 0.9;
+  }
+
+  h1 {
+    margin: 1rem 0;
+    font-size: var(--text-h2);
+  }
+
+  div div {
+    margin-top: 2rem;
+  }
+</style>

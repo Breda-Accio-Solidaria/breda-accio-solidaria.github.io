@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Privacitat">
+  <PageHeader eyebrow="Informació legal" title="Privacitat i protecció de dades" />
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Principi general</h2>
+      <p>
+        Aquest web és estàtic i no disposa de comptes d'usuari, formularis, base de dades ni
+        àrees privades. La navegació no requereix facilitar dades personals.
+      </p>
+
+      <h2>Contacte per correu electrònic</h2>
+      <p>
+        Quan una persona escriu a <a href={`mailto:${site.email}`}>{site.email}</a>, BAS tracta
+        les dades incloses al missatge únicament per respondre la consulta, gestionar una
+        proposta o tramitar la participació sol·licitada.
+      </p>
+      <p>
+        Les dades no es comuniquen a tercers, excepte quan sigui necessari per complir una
+        obligació legal o quan la persona interessada hagi autoritzat una gestió concreta.
+      </p>
+
+      <h2>Analítica de visites</h2>
+      <p>
+        El web pot utilitzar GoatCounter per obtenir estadístiques agregades de visites, pàgines
+        consultades, referències i tipus de dispositiu. Aquesta analítica no utilitza galetes ni
+        identificadors persistents i està configurada per evitar el seguiment individual.
+      </p>
+
+      <h2>Continguts externs</h2>
+      <p>
+        Els enllaços a xarxes socials o altres webs obren serveis externs amb les seves pròpies
+        polítiques de privacitat. El web no incorpora fonts, mapes, vídeos ni feeds socials
+        incrustats que transmetin dades automàticament durant la navegació.
+      </p>
+
+      <h2>Drets de les persones</h2>
+      <p>
+        Es pot sol·licitar informació, accés, rectificació o supressió de les dades facilitades
+        per correu electrònic escrivint a <a href={`mailto:${site.email}`}>{site.email}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

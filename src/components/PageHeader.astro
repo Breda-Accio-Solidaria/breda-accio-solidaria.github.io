@@ -1,0 +1,72 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  dark?: boolean;
+}
+const { eyebrow, title, intro, dark = false } = Astro.props;
+---
+
+<section class:list={['page-header', { dark }]}>
+  <div class="container inner">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    {intro && <p class="intro">{intro}</p>}
+    <slot />
+  </div>
+</section>
+
+<style>
+  .page-header {
+    padding-block: clamp(3.5rem, 9vw, 7rem);
+    border-bottom: 1px solid var(--color-border);
+    background:
+      linear-gradient(90deg, var(--color-red) 0 6rem, transparent 6rem) top left / 100% 5px no-repeat,
+      var(--color-cream);
+  }
+
+  .dark {
+    background:
+      linear-gradient(90deg, var(--color-red) 0 35%, var(--color-green) 35% 62%, var(--color-mint) 62%) top left / 100% 6px no-repeat,
+      var(--color-ink);
+    color: var(--color-vanilla);
+  }
+
+  .inner {
+    max-width: 78rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.9rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-green-dark);
+  }
+
+  .dark .eyebrow {
+    color: var(--color-mint);
+  }
+
+  h1 {
+    max-width: 16ch;
+    margin: 0;
+    font-size: var(--text-h1);
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .intro {
+    max-width: 48rem;
+    margin: 1.3rem 0 0;
+    font-size: var(--text-lead);
+    color: var(--color-muted);
+  }
+
+  .dark .intro {
+    color: #eee7db;
+  }
+</style>
