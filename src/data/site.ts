@@ -15,11 +15,55 @@ export const site = {
   isPreview: true,
 };
 
-export const mainNavigation = [
-  { label: 'Inici', href: '/' },
-  { label: "L'associació", href: '/associacio/' },
-  { label: 'Acció', href: '/campanyes/' },
-  { label: 'Continguts', href: '/actualitat/' },
-  { label: 'Agenda', href: '/agenda/' },
-  { label: 'Participa', href: '/participa/' },
+// export const mainNavigation = [
+//   { label: 'Inici', href: '/' },
+//   { label: "L'associació", href: '/associacio/' },
+//   { label: 'Acció', href: '/campanyes/' },
+//   { label: 'Continguts', href: '/actualitat/' },
+//   { label: 'Agenda', href: '/agenda/' },
+//   { label: 'Transparencia', href: '/transparencia/' },
+//   { label: 'Participa', href: '/participa/' },
+// ];
+
+export interface NavigationItem {
+  label: string;
+  href: string;
+  children?: NavigationItem[];
+}
+
+export const mainNavigation: NavigationItem[] = [
+  {
+    label: 'Inici',
+    href: '/',
+  },
+  {
+    label: "L'associació",
+    href: '/associacio/',
+    children: [
+      {
+        label: 'Qui som',
+        href: '/associacio/',
+      },
+      {
+        label: 'Transparència',
+        href: '/transparencia/',
+      },
+    ],
+  },
+  {
+    label: 'Acció',
+    href: '/campanyes/',
+  },
+  {
+    label: 'Continguts',
+    href: '/actualitat/',
+  },
+  {
+    label: 'Agenda',
+    href: '/agenda/',
+  },
+  {
+    label: 'Participa',
+    href: '/participa/',
+  },
 ];

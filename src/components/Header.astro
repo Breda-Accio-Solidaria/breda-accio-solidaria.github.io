@@ -1,45 +1,188 @@
 ---
 import Logo from './Logo.astro';
-import { mainNavigation } from '../data/site';
+import {
+  mainNavigation,
+  type NavigationItem,
+} from '../data/site';
 
 const pathname = Astro.url.pathname;
-const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href);
+
+const isActive = (href: string) =>
+  href === '/'
+    ? pathname === '/'
+    : pathname.startsWith(href);
+
+const isItemActive = (item: NavigationItem) =>
+  isActive(item.href) ||
+  item.children?.some((child) => isActive(child.href)) === true;
 ---
 
 <header class="site-header">
   <div class="top-line" aria-hidden="true"></div>
+
   <div class="container header-inner">
     <Logo />
 
+    <!-- Navegació d'escriptori -->
     <nav class="desktop-nav" aria-label="Navegació principal">
-      <ul>
-        {mainNavigation.map((item) => (
-          <li>
-            <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
-              {item.label}
-            </a>
-          </li>
-        ))}
+      <ul class="desktop-menu">
+        {
+          mainNavigation.map((item) => {
+            const hasChildren = Boolean(item.children?.length);
+
+            return (
+              <li
+                class:list={[
+                  'nav-item',
+                  {
+                    'has-submenu': hasChildren,
+                  },
+                ]}
+              >
+                <div class="nav-parent">
+                  <a
+                    class:list={[
+                      'nav-link',
+                      {
+                        'is-active': isItemActive(item),
+                      },
+                    ]}
+                    href={item.href}
+                    aria-current={
+                      isActive(item.href)
+                        ? 'page'
+                        : undefined
+                    }
+                  >
+                    {item.label}
+                  </a>
+
+                  {hasChildren && (
+                    <span
+                      class="submenu-arrow"
+                      aria-hidden="true"
+                    >
+                      ▾
+                    </span>
+                  )}
+                </div>
+
+                {hasChildren && (
+                  <ul class="submenu">
+                    {item.children?.map((child) => (
+                      <li>
+                        <a
+                          class:list={{
+                            'is-active': isActive(child.href),
+                          }}
+                          href={child.href}
+                          aria-current={
+                            isActive(child.href)
+                              ? 'page'
+                              : undefined
+                          }
+                        >
+                          {child.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })
+        }
       </ul>
-      <a class="contact-link" href="/contacte/">Contacte</a>
+
+      <a
+        class="contact-link"
+        href="/contacte/"
+        aria-current={
+          isActive('/contacte/')
+            ? 'page'
+            : undefined
+        }
+      >
+        Contacte
+      </a>
     </nav>
 
+    <!-- Navegació mòbil -->
     <details class="mobile-nav">
       <summary aria-label="Obre el menú de navegació">
         <span>Menú</span>
         <span class="menu-icon" aria-hidden="true"></span>
       </summary>
+
       <nav aria-label="Navegació mòbil">
-        <ul>
-          {mainNavigation.map((item) => (
-            <li>
-              <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
-                {item.label}
-              </a>
-            </li>
-          ))}
-          <li><a href="/transparencia/">Transparència</a></li>
-          <li><a href="/contacte/">Contacte</a></li>
+        <ul class="mobile-menu">
+          {
+            mainNavigation.map((item) => {
+              const hasChildren = Boolean(item.children?.length);
+
+              return (
+                <li>
+                  {hasChildren ? (
+                    <details
+                      class="mobile-submenu"
+                      open={isItemActive(item)}
+                    >
+                      <summary>
+                        <span>{item.label}</span>
+                        <span
+                          class="mobile-submenu-arrow"
+                          aria-hidden="true"
+                        >
+                          ▾
+                        </span>
+                      </summary>
+
+                      <ul>
+                        {item.children?.map((child) => (
+                          <li>
+                            <a
+                              href={child.href}
+                              aria-current={
+                                isActive(child.href)
+                                  ? 'page'
+                                  : undefined
+                              }
+                            >
+                              {child.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  ) : (
+                    <a
+                      href={item.href}
+                      aria-current={
+                        isActive(item.href)
+                          ? 'page'
+                          : undefined
+                      }
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              );
+            })
+          }
+
+          <li>
+            <a
+              href="/contacte/"
+              aria-current={
+                isActive('/contacte/')
+                  ? 'page'
+                  : undefined
+              }
+            >
+              Contacte
+            </a>
+          </li>
         </ul>
       </nav>
     </details>
@@ -51,7 +194,11 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     position: sticky;
     top: 0;
     z-index: 20;
-    background: color-mix(in srgb, var(--color-vanilla) 95%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--color-vanilla) 95%,
+      transparent
+    );
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
   }
@@ -69,22 +216,39 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     gap: 1.25rem;
   }
 
+  /* Navegació d'escriptori */
+
   .desktop-nav {
     display: flex;
     align-items: center;
     gap: 0.75rem;
   }
 
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 0.05rem;
+  .desktop-menu,
+  .submenu,
+  .mobile-menu,
+  .mobile-submenu ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  a {
+  .desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.05rem;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-parent {
+    display: flex;
+    align-items: center;
+  }
+
+  .desktop-nav a {
     display: inline-flex;
     align-items: center;
     min-height: 2.75rem;
@@ -96,29 +260,90 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     border-bottom: 3px solid transparent;
   }
 
-  a:hover,
-  a[aria-current='page'] {
+  .desktop-nav a:hover,
+  .desktop-nav a:focus-visible,
+  .desktop-nav a.is-active,
+  .desktop-nav a[aria-current='page'] {
     border-bottom-color: var(--color-red);
+  }
+
+  .submenu-arrow {
+    margin-left: -0.35rem;
+    margin-right: 0.35rem;
+    font-size: 0.75rem;
+    transition: transform 150ms ease;
+  }
+
+  .has-submenu:hover .submenu-arrow,
+  .has-submenu:focus-within .submenu-arrow {
+    transform: rotate(180deg);
+  }
+
+  .submenu {
+    position: absolute;
+    top: calc(100% - 0.1rem);
+    left: 0;
+    z-index: 30;
+    min-width: 13rem;
+    padding: 0.4rem;
+    background: var(--color-vanilla);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-0.4rem);
+
+    transition:
+      opacity 140ms ease,
+      visibility 140ms ease,
+      transform 140ms ease;
+  }
+
+  .nav-item:hover > .submenu,
+  .nav-item:focus-within > .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .submenu a {
+    width: 100%;
+    min-height: 2.5rem;
+    padding: 0.65rem 0.8rem;
+    border-bottom: 0;
+  }
+
+  .submenu a:hover,
+  .submenu a:focus-visible,
+  .submenu a.is-active {
+    background: var(--color-mint);
+    border-bottom: 0;
   }
 
   .contact-link {
     padding-inline: 0.95rem;
     background: var(--color-ink);
-    color: var(--color-vanilla);
-    border: 2px solid var(--color-ink);
+    color: var(--color-vanilla) !important;
+    border: 2px solid var(--color-ink) !important;
   }
 
-  .contact-link:hover {
+  .contact-link:hover,
+  .contact-link:focus-visible {
     background: transparent;
-    color: var(--color-ink);
+    color: var(--color-ink) !important;
   }
+
+  /* Navegació mòbil */
 
   .mobile-nav {
     display: none;
     position: relative;
   }
 
-  summary {
+  .mobile-nav > summary {
     cursor: pointer;
     list-style: none;
     min-height: 2.9rem;
@@ -131,7 +356,8 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     font-weight: 800;
   }
 
-  summary::-webkit-details-marker {
+  .mobile-nav > summary::-webkit-details-marker,
+  .mobile-submenu > summary::-webkit-details-marker {
     display: none;
   }
 
@@ -154,10 +380,15 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     left: 0;
   }
 
-  .menu-icon::before { top: -0.38rem; }
-  .menu-icon::after { top: 0.38rem; }
+  .menu-icon::before {
+    top: -0.38rem;
+  }
 
-  .mobile-nav nav {
+  .menu-icon::after {
+    top: 0.38rem;
+  }
+
+  .mobile-nav > nav {
     position: absolute;
     right: 0;
     top: calc(100% + 0.5rem);
@@ -170,15 +401,66 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
     box-shadow: var(--shadow-lg);
   }
 
-  .mobile-nav ul {
+  .mobile-menu {
     display: grid;
   }
 
   .mobile-nav a {
+    display: flex;
     width: 100%;
+    min-height: 2.75rem;
+    align-items: center;
     justify-content: flex-start;
+    padding: 0.55rem 0.8rem;
+    color: var(--color-ink);
+    text-decoration: none;
     font-size: 1rem;
-    padding-inline: 0.8rem;
+    font-weight: 700;
+    border-left: 3px solid transparent;
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a:focus-visible,
+  .mobile-nav a[aria-current='page'] {
+    background: var(--color-mint);
+    border-left-color: var(--color-red);
+  }
+
+  .mobile-submenu > summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.8rem;
+    color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .mobile-submenu > summary:hover,
+  .mobile-submenu > summary:focus-visible {
+    background: var(--color-mint);
+  }
+
+  .mobile-submenu-arrow {
+    transition: transform 150ms ease;
+  }
+
+  .mobile-submenu[open] .mobile-submenu-arrow {
+    transform: rotate(180deg);
+  }
+
+  .mobile-submenu ul {
+    margin-left: 0.8rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--color-green);
+  }
+
+  .mobile-submenu ul a {
+    font-size: 0.95rem;
+    font-weight: 650;
   }
 
   @media (max-width: 74rem) {
@@ -188,6 +470,14 @@ const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.st
 
     .mobile-nav {
       display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .submenu,
+    .submenu-arrow,
+    .mobile-submenu-arrow {
+      transition: none;
     }
   }
 </style>
