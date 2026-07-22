@@ -8,11 +8,11 @@ const items = (await getCollection('campanyes', ({ data }) => !data.draft))
   .sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
 ---
 
-<BaseLayout title="Campanyes">
+<BaseLayout title="Acció">
   <PageHeader
-    eyebrow="Campanyes"
+    eyebrow="Acció"
     title="Línies d'acció sostingudes"
-    intro="Les campanyes agrupen activitats, materials i propostes de participació al voltant d'una causa compartida."
+    intro="Les campanyes, mobilitzacions i iniciatives impulsades per Breda Acció Solidària."
   />
 
   <section class="section">

@@ -101,8 +101,8 @@ const campaigns = (await getCollection('campanyes', ({ data }) => !data.draft &&
   <section class="section campaigns">
     <div class="container">
       <div class="heading-row">
-        <SectionHeading eyebrow="Campanyes" title="Línies de treball obertes" />
-        <a href="/campanyes/">Totes les campanyes →</a>
+        <SectionHeading eyebrow="Acció" title="Línies de treball obertes" />
+        <a href="/campanyes/">Totes les activitats →</a>
       </div>
       <div class="grid-3">
         {campaigns.map((item) => <CampaignCard item={item} />)}
@@ -125,8 +125,8 @@ const campaigns = (await getCollection('campanyes', ({ data }) => !data.draft &&
   <section class="section news">
     <div class="container">
       <div class="heading-row">
-        <SectionHeading eyebrow="Actualitat" title="Notícies, cròniques i anàlisi" />
-        <a href="/actualitat/">Anar a l'actualitat →</a>
+        <SectionHeading eyebrow="Continguts" title="Notícies, cròniques i anàlisi" />
+        <a href="/actualitat/">Anar al contingut →</a>
       </div>
       <div class="grid-3">
         {news.map((item) => <NewsCard item={item} />)}

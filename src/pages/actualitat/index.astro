@@ -8,11 +8,11 @@ const items = (await getCollection('actualitat', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
 ---
 
-<BaseLayout title="Actualitat">
+<BaseLayout title="Continguts">
   <PageHeader
-    eyebrow="Actualitat"
+    eyebrow="Continguts"
     title="Notícies, cròniques i pensament crític"
-    intro="Recollim l'activitat de BAS, els materials de les campanyes i textos que ajuden a situar els debats."
+    intro="Recollim l'activitat del BAS, les nostres reflexions i posicionaments, i continguts relacionats amb les campanyes i els àmbits en què treballem."
   />
 
   <section class="section">
