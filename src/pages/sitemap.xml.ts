@@ -7,7 +7,6 @@ export async function GET({ site }: { site: URL }) {
     '/',
     '/associacio/',
     '/associacio/organitzacio/',
-    '/accio/',
     '/campanyes/',
     '/actualitat/',
     '/agenda/',
