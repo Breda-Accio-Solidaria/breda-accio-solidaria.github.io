@@ -8,7 +8,7 @@ organizers: ["Breda Acció Solidària"]
 campaign: "Medi ambient i territori"
 status: programada
 featured: false
-isPlaceholder: true
+format: "jornada"
 image: "/images/medi-ambient-territori.webp"
 imageAlt: "Gràfica verda amb el text Medi ambient i territori"
 calendarFile: "/calendar/passejada-riera.ics"

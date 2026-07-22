@@ -8,6 +8,7 @@ organizers: ["Breda Acció Solidària"]
 campaign: "Palestina"
 status: finalitzada
 featured: false
+format: xerrada
 image: "/images/poster-de-gaza-a-breda.webp"
 imageAlt: "Cartell de la xerrada De Gaza a Breda"
 ---

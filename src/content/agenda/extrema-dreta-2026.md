@@ -8,6 +8,7 @@ organizers: ["Breda Acció Solidària"]
 campaign: "Extrema dreta"
 status: finalitzada
 featured: false
+format: xerrada
 image: "/images/poster-extrema-dreta.webp"
 imageAlt: "Cartell de la xerrada Extrema dreta"
 ---

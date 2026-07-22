@@ -8,7 +8,7 @@ organizers: ["Breda Acció Solidària", "Entitats col·laboradores"]
 campaign: "Palestina"
 status: programada
 featured: true
-isPlaceholder: true
+format: jornada
 image: "/images/cartell-gaza-i-nosaltres.webp"
 imageAlt: "Cartell Gaza i nosaltres amb una fotografia d'una concentració"
 calendarFile: "/calendar/jornada-gaza-i-nosaltres.ics"

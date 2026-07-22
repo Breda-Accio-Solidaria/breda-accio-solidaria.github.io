@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { agendaFormats } from './data/agenda';
 
 const common = {
   title: z.string(),
@@ -32,6 +33,7 @@ const agenda = defineCollection({
     location: z.string(),
     organizers: z.array(z.string()).default(['Breda Acció Solidària']),
     campaign: z.string().optional(),
+    format: z.enum(agendaFormats),
     status: z.enum(['programada', 'cancel·lada', 'finalitzada']).default('programada'),
     image: z.string().optional(),
     imageAlt: z.string().optional(),

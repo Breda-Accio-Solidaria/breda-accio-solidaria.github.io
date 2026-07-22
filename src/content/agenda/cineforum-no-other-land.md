@@ -8,7 +8,7 @@ organizers: ["Breda Acció Solidària"]
 campaign: "Palestina"
 status: programada
 featured: true
-isPlaceholder: true
+format: "cineforum"
 image: "/images/cartell-gaza-i-nosaltres.webp"
 imageAlt: "Cartell d'una activitat sobre Gaza"
 calendarFile: "/calendar/cineforum-no-other-land.ics"

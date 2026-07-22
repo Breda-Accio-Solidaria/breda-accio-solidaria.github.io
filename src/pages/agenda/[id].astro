@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import Badge from '../../components/Badge.astro';
 import { formatDateTime } from '../../utils/format';
+import { agendaFormatMeta } from '../../data/agenda';
 
 export async function getStaticPaths() {
   const items = await getCollection('agenda', ({ data }) => !data.draft);
@@ -11,6 +12,7 @@ export async function getStaticPaths() {
 
 const { item } = Astro.props;
 const { Content } = await render(item);
+const formatMeta = agendaFormatMeta[item.data.format];
 ---
 
 <ArticleLayout
@@ -18,12 +20,19 @@ const { Content } = await render(item);
   summary={item.data.summary}
   eyebrow="Agenda"
   meta={formatDateTime(item.data.startDate)}
-  isPlaceholder={item.data.isPlaceholder}
   image={item.data.image}
   imageAlt={item.data.imageAlt}
 >
   <dl class="event-details">
     <div><dt>Estat</dt><dd><Badge tone={item.data.status === 'cancel·lada' ? 'red' : item.data.status === 'finalitzada' ? 'neutral' : 'mint'}>{item.data.status}</Badge></dd></div>
+    <div>
+      <dt>Tipus d'activitat</dt>
+      <dd>
+        <Badge tone={formatMeta.tone}>
+          {formatMeta.label}
+        </Badge>
+      </dd>
+    </div>
     <div><dt>Data i hora</dt><dd>{formatDateTime(item.data.startDate)}</dd></div>
     <div><dt>Lloc</dt><dd>{item.data.location}</dd></div>
     <div><dt>Organitza</dt><dd>{item.data.organizers.join(', ')}</dd></div>
