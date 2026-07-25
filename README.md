@@ -63,8 +63,8 @@ nvm use
 Cloneu el repositori:
 
 ```bash
-git clone https://github.com/<organització>/<organització>.github.io.git
-cd <organització>.github.io
+git clone https://github.com/Breda-Accio-Solidaria/breda-accio-solidaria.github.io.git
+cd breda-accio-solidaria.github.io
 ```
 
 Instal·leu les dependències:

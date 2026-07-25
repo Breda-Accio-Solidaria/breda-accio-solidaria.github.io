@@ -26,8 +26,8 @@ jobs:
 
       - name: Install, build, and upload Astro site
         uses: withastro/action@v6
-        with:
-          package-manager: npm@latest
+        env:
+          PUBLIC_GOATCOUNTER_ENDPOINT: ${{ vars.PUBLIC_GOATCOUNTER_ENDPOINT }}
 
   deploy:
     needs: build

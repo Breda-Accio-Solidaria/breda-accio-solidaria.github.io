@@ -1,12 +1,15 @@
 ---
-const endpoint = import.meta.env.PUBLIC_GOATCOUNTER_ENDPOINT?.trim();
+const endpoint =
+  import.meta.env.PUBLIC_GOATCOUNTER_ENDPOINT?.trim();
 ---
 
-{endpoint && (
-  <script
-    is:inline
-    data-goatcounter={endpoint}
-    async
-    src="https://gc.zgo.at/count.js"
-  ></script>
-)}
+{
+  endpoint && (
+    <script
+      is:inline
+      data-goatcounter={endpoint}
+      async
+      src="https://gc.zgo.at/count.js"
+    ></script>
+  )
+}
