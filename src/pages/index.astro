@@ -11,7 +11,14 @@ const news = (await getCollection('actualitat', ({ data }) => !data.draft))
   .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
   .slice(0, 3);
 
-const events = (await getCollection('agenda', ({ data }) => !data.draft && data.status === 'programada'))
+const events = (
+  await getCollection(
+    'agenda',
+    ({ data }) =>
+      !data.draft &&
+      ['confirmada'].includes(data.status)
+  )
+)
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
   .slice(0, 3);
 

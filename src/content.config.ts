@@ -34,7 +34,7 @@ const agenda = defineCollection({
     organizers: z.array(z.string()).default(['Breda Acció Solidària']),
     campaign: z.string().optional(),
     format: z.enum(agendaFormats),
-    status: z.enum(['programada', 'cancel·lada', 'finalitzada']).default('programada'),
+    status: z.enum(['proposada', 'confirmada', 'finalitzada']).default('proposada'),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
     externalUrl: z.string().url().optional(),

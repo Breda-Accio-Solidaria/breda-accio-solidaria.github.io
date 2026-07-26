@@ -24,7 +24,22 @@ const formatMeta = agendaFormatMeta[item.data.format];
   imageAlt={item.data.imageAlt}
 >
   <dl class="event-details">
-    <div><dt>Estat</dt><dd><Badge tone={item.data.status === 'cancel·lada' ? 'red' : item.data.status === 'finalitzada' ? 'neutral' : 'mint'}>{item.data.status}</Badge></dd></div>
+    <div>
+      <dt>Estat</dt>
+      <dd>
+        <Badge
+          tone={
+            item.data.status === 'confirmada'
+              ? 'mint'
+              : item.data.status === 'finalitzada'
+                ? 'neutral'
+                : 'strawberry'
+          }
+        >
+          {item.data.status}
+        </Badge>
+      </dd>
+    </div>
     <div>
       <dt>Tipus d'activitat</dt>
       <dd>

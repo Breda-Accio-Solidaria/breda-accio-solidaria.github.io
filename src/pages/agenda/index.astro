@@ -7,7 +7,9 @@ import EventCard from '../../components/EventCard.astro';
 
 const items = await getCollection('agenda', ({ data }) => !data.draft);
 const upcoming = items
-  .filter((item) => item.data.status === 'programada')
+  .filter((item) =>
+    ['confirmada'].includes(item.data.status)
+  )
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf());
 const past = items
   .filter((item) => item.data.status === 'finalitzada')
