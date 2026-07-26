@@ -9,9 +9,15 @@ interface Props {
 }
 const { item } = Astro.props;
 const formatMeta = agendaFormatMeta[item.data.format];
-const dateParts = new Intl.DateTimeFormat('ca-ES', { day: '2-digit', month: 'short' }).formatToParts(item.data.startDate);
-const day = dateParts.find((p) => p.type === 'day')?.value;
-const month = dateParts.find((p) => p.type === 'month')?.value?.replace('.', '');
+const day = new Intl.DateTimeFormat('ca-ES', {
+  day: 'numeric',
+}).format(item.data.startDate);
+
+const month = new Intl.DateTimeFormat('ca-ES', {
+  month: 'short',
+})
+  .format(item.data.startDate)
+  .replace('.', '')
 ---
 
 <article class="event-card">
