@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import Badge from '../../components/Badge.astro';
-import EventCard from '../../components/EventCard.astro';
+import RelatedEventCard from '../../components/RelatedEventCard.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import { humanize, formatDate } from '../../utils/format';
 
@@ -78,10 +78,10 @@ const relatedEvents = (
           intro="Xerrades, debats i altres activitats confirmades dins d’aquesta línia d’acció."
         />
 
-        <div class="grid-3">
+        <div class="related-events-grid">
           {
             relatedEvents.map((event) => (
-              <EventCard item={event} />
+              <RelatedEventCard item={event} />
             ))
           }
         </div>
@@ -134,5 +134,17 @@ const relatedEvents = (
     padding: 1.4rem;
     background: var(--color-mint);
     border-left: 7px solid var(--color-green);
+  }
+
+  .related-events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 48rem) {
+    .related-events-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

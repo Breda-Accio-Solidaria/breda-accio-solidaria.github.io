@@ -5,7 +5,7 @@ startDate: 2026-07-10T19:00:00+02:00
 endDate: 2026-07-10T21:00:00+02:00
 location: "Centre Cívic de Breda, sala gran"
 organizers: ["Breda Acció Solidària"]
-campaign: "Palestina"
+campaign: "palestina"
 status: finalitzada
 featured: false
 format: xerrada
