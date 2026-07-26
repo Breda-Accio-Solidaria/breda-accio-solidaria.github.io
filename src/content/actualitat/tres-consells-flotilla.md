@@ -6,10 +6,10 @@ type: noticia
 topics: ["Palestina", "Boicot", "Lectures", "Xarxes socials"]
 featured: true
 image: "/images/campanya-palestina.webp"
-imageAlt: "Composició de quatre publicacions de BAS sobre Palestina i la Flotilla"
+imageAlt: "Composició de quatre publicacions del BAS sobre Palestina i la Flotilla"
 ---
 
-Després de la xerrada **De Gaza a Breda**, BAS va resumir algunes formes senzilles de mantenir el suport a les flotilles i a la població palestina.
+Després de la xerrada **De Gaza a Breda**, el BAS va resumir algunes formes senzilles de mantenir el suport a les flotilles i a la població palestina.
 
 ## 1. Seguir parlant de Palestina
 
@@ -34,10 +34,10 @@ Perquè sigui útil, el boicot ha de ser:
 
 Els llibres, els documentals i els testimonis permeten comprendre la història, l'ocupació, la vida quotidiana i les formes de resistència palestines més enllà de l'actualitat immediata.
 
-Entre els materials compartits per BAS hi ha lectures d'autors palestins i obres que ajuden a situar el territori, la memòria i l'experiència de l'exili.
+Entre els materials compartits pel BAS hi ha lectures d'autors palestins i obres que ajuden a situar el territori, la memòria i l'experiència de l'exili.
 
 ![Publicació amb recomanacions de lectura sobre Palestina](/images/consell-flotilla-4.webp)
 
 ## Participa
 
-Segueix les convocatòries de BAS, comparteix els materials i [contacta amb l'associació](/contacte/) per col·laborar en les properes activitats.
+Segueix les convocatòries del BAS, comparteix els materials i [contacta amb l'associació](/contacte/) per col·laborar en les properes activitats.

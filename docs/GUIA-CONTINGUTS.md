@@ -37,7 +37,7 @@ Una campanya ha d'explicar:
 
 - català estàndard;
 - frases directes;
-- context suficient per a persones que no coneixen BAS;
+- context suficient per a persones que no coneixen el BAS;
 - evitar llenguatge comercial;
 - diferenciar fets, interpretacions i propostes;
 - enllaçar les fonts originals quan sigui rellevant.

@@ -12,7 +12,7 @@ callToAction: "Participa als cercles d'estudi, proposa lectures o activitats i a
 
 L'extrema dreta avança quan aconsegueix presentar l'autoritarisme, el racisme i la desigualtat com a respostes normals als problemes socials.
 
-La campanya de BAS combina anàlisi política i treball comunitari. No es tracta només de respondre a partits concrets, sinó d'entendre com circulen els marcs d'exclusió i per què poden arrelar.
+La campanya del BAS combina anàlisi política i treball comunitari. No es tracta només de respondre a partits concrets, sinó d'entendre com circulen els marcs d'exclusió i per què poden arrelar.
 
 ## Eixos de treball
 

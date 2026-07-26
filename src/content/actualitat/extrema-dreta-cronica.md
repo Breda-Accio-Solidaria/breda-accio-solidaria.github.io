@@ -34,4 +34,4 @@ La resposta no pot limitar-se a denunciar. Durant el debat es van destacar diver
 5. recuperar la memòria democràtica i antifeixista;
 6. oferir espais de participació política real, especialment per als joves.
 
-L'activitat va reunir entre cinquanta i seixanta persones i va obrir una línia de treball que BAS continuarà desenvolupant mitjançant cercles d'estudi i noves activitats públiques.
+L'activitat va reunir entre cinquanta i seixanta persones i va obrir una línia de treball que el BAS continuarà desenvolupant mitjançant cercles d'estudi i noves activitats públiques.

@@ -21,4 +21,4 @@ La solidaritat amb el poble cubà és una de les finalitats fundacionals de BAS.
 
 ## Enfocament
 
-BAS vol tractar aquestes qüestions amb context històric, pluralitat de fonts i atenció a les condicions materials de la població.
+El BAS vol tractar aquestes qüestions amb context històric, pluralitat de fonts i atenció a les condicions materials de la població.

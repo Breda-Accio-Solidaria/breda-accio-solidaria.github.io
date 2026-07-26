@@ -50,6 +50,6 @@ Podeu consultar informació sobre les campanyes internacionals de boicot al web 
 
 Durant l'activitat es va recomanar el text **Mentrestant**, de John Berger, una reflexió sobre poder, resistència i arrelament local. La lectura reforça una de les idees centrals de la sessió: les formes de resistència més sòlides neixen sovint de vincles concrets, territoris coneguts i comunitats capaces d'organitzar-se.
 
-![Una de les peces de la campanya de BAS amb el missatge Seguir parlant de Palestina](/images/consell-flotilla-2.webp)
+![Una de les peces de la campanya del BAS amb el missatge Seguir parlant de Palestina](/images/consell-flotilla-2.webp)
 
 *Material de sensibilització publicat per Breda Acció Solidària.*

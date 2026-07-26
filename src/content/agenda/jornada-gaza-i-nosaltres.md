@@ -30,4 +30,4 @@ La proposta combina informació, cultura i solidaritat en un mateix espai. Duran
 
 ## Com col·laborar
 
-Pots ajudar amb el muntatge, l'acollida, la barra, la difusió o la documentació fotogràfica. Escriu a [BAS](/contacte/) indicant la tasca que prefereixes.
+Pots ajudar amb el muntatge, l'acollida, la barra, la difusió o la documentació fotogràfica. Escriu al [BAS](/contacte/) indicant la tasca que prefereixes.

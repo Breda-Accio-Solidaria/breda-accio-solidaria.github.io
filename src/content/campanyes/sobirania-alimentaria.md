@@ -11,7 +11,7 @@ callToAction: "Comparteix experiències del territori, proposa persones convidad
 
 La sobirania alimentària defensa la capacitat de les comunitats per decidir sobre la producció, les llavors, el territori i la distribució dels aliments.
 
-BAS treballa aquesta qüestió des d'una perspectiva ambiental i política.
+El BAS treballa aquesta qüestió des d'una perspectiva ambiental i política.
 
 ## Preguntes que volem posar sobre la taula
 

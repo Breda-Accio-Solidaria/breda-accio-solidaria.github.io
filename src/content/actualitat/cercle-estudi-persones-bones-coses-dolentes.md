@@ -9,7 +9,7 @@ image: "/images/cercle-estudi.webp"
 imageAlt: "Gràfica amb el text Cercle d'estudi, debat, lectura i pensament crític"
 ---
 
-El 2 de juliol, deu persones van participar en el primer cercle d'estudi de BAS. La sessió va partir d'una pregunta incòmoda però útil: **per què persones que es consideren bones poden reproduir prejudicis, exclusions o formes de violència?**
+El 2 de juliol, deu persones van participar en el primer cercle d'estudi del BAS. La sessió va partir d'una pregunta incòmoda però útil: **per què persones que es consideren bones poden reproduir prejudicis, exclusions o formes de violència?**
 
 El debat va avançar des de la psicologia quotidiana fins a la política contemporània.
 
@@ -41,4 +41,4 @@ El cercle va defensar la necessitat de buscar punts comuns, recuperar la memòri
 
 ## Continuar creixent
 
-La sessió va acabar amb una reflexió organitzativa: perquè BAS pugui influir en el debat local, necessita més mans, més idees i més continuïtat. Els cercles d'estudi volen ser una eina estable per pensar col·lectivament i preparar accions públiques.
+La sessió va acabar amb una reflexió organitzativa: perquè el BAS pugui influir en el debat local, necessita més mans, més idees i més continuïtat. Els cercles d'estudi volen ser una eina estable per pensar col·lectivament i preparar accions públiques.

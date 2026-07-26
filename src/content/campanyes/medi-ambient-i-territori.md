@@ -10,7 +10,7 @@ imageAlt: "Gràfica verda sobre medi ambient i territori"
 callToAction: "Participa en les sortides, envia informació sobre problemes ambientals i proposa accions de sensibilització."
 ---
 
-La defensa del medi ambient és una de les finalitats de BAS. Aquesta campanya mostra com es pot estructurar una línia local de treball ambiental.
+La defensa del medi ambient és una de les finalitats del BAS. Aquesta campanya mostra com es pot estructurar una línia local de treball ambiental.
 
 ## Àmbits
 

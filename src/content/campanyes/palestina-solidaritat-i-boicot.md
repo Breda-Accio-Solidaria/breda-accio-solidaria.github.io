@@ -6,7 +6,7 @@ startDate: 2026-04-01
 topics: ["Palestina", "Drets humans", "Boicot", "Flotilla"]
 featured: true
 image: "/images/campanya-palestina.webp"
-imageAlt: "Composició de materials de BAS sobre Palestina"
+imageAlt: "Composició de materials del BAS sobre Palestina"
 callToAction: "Comparteix els materials, assisteix a les activitats, ajuda en la difusió i proposa accions de boicot o solidaritat al teu entorn."
 relatedLinks:
   - label: "Moviment BDS"
@@ -32,14 +32,14 @@ Organitzem xerrades amb persones coneixedores del territori, activistes i membre
 
 ### Actuar
 
-El boicot és una eina de pressió ciutadana. BAS promou un boicot informat, selectiu i vinculat a campanyes amb objectius públics.
+El boicot és una eina de pressió ciutadana. El BAS promou un boicot informat, selectiu i vinculat a campanyes amb objectius públics.
 
 ### Sostenir
 
 La solidaritat també és continuïtat: compartir convocatòries, donar suport material, participar com a voluntari i mantenir xarxes locals actives.
 
-![Publicació de BAS amb tres consells sobre les flotilles](/images/consell-flotilla-1.webp)
+![Publicació del BAS amb tres consells sobre les flotilles](/images/consell-flotilla-1.webp)
 
 ## Materials de campanya
 
-Els materials visuals es poden compartir a xarxes socials, grups de missatgeria i espais associatius. Cal conservar el missatge complet i identificar BAS com a font.
+Els materials visuals es poden compartir a xarxes socials, grups de missatgeria i espais associatius. Cal conservar el missatge complet i identificar el BAS com a font.

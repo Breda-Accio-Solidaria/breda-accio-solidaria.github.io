@@ -51,4 +51,4 @@ Això no implica rebutjar la innovació varietal. Implica discutir:
 - com es reparteixen els beneficis;
 - com es protegeixen les varietats tradicionals i l'interès públic.
 
-Aquest text forma part dels materials de debat de BAS sobre medi ambient, economia i sobirania alimentària.
+Aquest text forma part dels materials de debat del BAS sobre medi ambient, economia i sobirania alimentària.

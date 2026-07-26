@@ -31,4 +31,4 @@ L'entrada és lliure fins a completar l'aforament. Es recomana arribar amb antel
 
 ## Accessibilitat
 
-La sala és accessible per a persones amb mobilitat reduïda. Si necessites alguna mesura específica d'accés, contacta amb BAS abans de l'activitat.
+La sala és accessible per a persones amb mobilitat reduïda. Si necessites alguna mesura específica d'accés, contacta amb el BAS abans de l'activitat.
