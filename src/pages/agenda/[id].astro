@@ -25,22 +25,6 @@ const formatMeta = agendaFormatMeta[item.data.format];
 >
   <dl class="event-details">
     <div>
-      <dt>Estat</dt>
-      <dd>
-        <Badge
-          tone={
-            item.data.status === 'confirmada'
-              ? 'mint'
-              : item.data.status === 'finalitzada'
-                ? 'neutral'
-                : 'strawberry'
-          }
-        >
-          {item.data.status}
-        </Badge>
-      </dd>
-    </div>
-    <div>
       <dt>Tipus d'activitat</dt>
       <dd>
         <Badge tone={formatMeta.tone}>

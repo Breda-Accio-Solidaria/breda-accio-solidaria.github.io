@@ -5,11 +5,11 @@ startDate: 2026-11-07T12:00:00+01:00
 endDate: 2026-11-07T13:30:00+01:00
 location: "Pati de l'Abadia, Breda"
 organizers: ["Breda Acció Solidària"]
-campaign: "Com identificar l'extrema dreta"
+campaign: "contra-extrema-dreta"
 format: debat
 status: proposada
 featured: false
-draft: false
+draft: true
 ---
 
 ## Sobre la sessió

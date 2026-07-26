@@ -5,11 +5,11 @@ startDate: 2026-11-27T19:00:00+01:00
 endDate: 2026-11-27T21:00:00+01:00
 location: "Centre Cultural Els Forns, Breda"
 organizers: ["Breda Acció Solidària"]
-campaign: "Com identificar l'extrema dreta"
+campaign: "contra-extrema-dreta"
 format: xerrada
 status: proposada
 featured: false
-draft: false
+draft: true
 ---
 
 ## Sobre la sessió

@@ -5,11 +5,11 @@ startDate: 2027-02-27T17:00:00+01:00
 endDate: 2027-02-27T19:00:00+01:00
 location: "Centre Cívic de Breda"
 organizers: ["Breda Acció Solidària"]
-campaign: "Com identificar l'extrema dreta"
+campaign: "societat"
 format: debat
 status: proposada
 featured: false
-draft: false
+draft: true
 ---
 
 ## Sobre la sessió

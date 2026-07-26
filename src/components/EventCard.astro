@@ -27,19 +27,7 @@ const month = new Intl.DateTimeFormat('ca-ES', {
   </div>
   <div class="body">
     <div class="meta">
-    <Badge
-      tone={
-        item.data.status === 'confirmada'
-          ? 'mint'
-          : item.data.status === 'finalitzada'
-            ? 'neutral'
-            : 'strawberry'
-      }
-    >
-      {item.data.status}
-    </Badge>
-
-    <Badge tone={formatMeta.tone}>
+      <Badge tone={formatMeta.tone}>
       {formatMeta.label}
     </Badge>
   </div>

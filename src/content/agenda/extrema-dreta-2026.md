@@ -5,7 +5,7 @@ startDate: 2026-05-08T19:00:00+02:00
 endDate: 2026-05-08T21:00:00+02:00
 location: "Centre Cultural Els Forns, Breda"
 organizers: ["Breda Acció Solidària"]
-campaign: "Extrema dreta"
+campaign: "contra-extrema-dreta"
 status: finalitzada
 featured: false
 format: xerrada

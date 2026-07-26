@@ -5,7 +5,7 @@ startDate: 2026-10-02T19:00:00+02:00
 endDate: 2026-10-02T21:00:00+02:00
 location: "Centre Cultural Els Forns, Breda"
 organizers: ["Breda Acció Solidària"]
-campaign: "Com identificar l'extrema dreta"
+campaign: "contra-extrema-dreta"
 format: xerrada
 status: confirmada
 featured: true
@@ -16,7 +16,7 @@ draft: false
 
 Les grans plataformes digitals ja no són només empreses dins del mercat: controlen infraestructures, dades, algoritmes i espais d’intermediació dels quals depenen una part creixent de la vida econòmica i social.
 
-A partir del llibre *Tecnofeudalisme*, de Yanis Varoufakis, la sessió analitzarà la tesi segons la qual el capitalisme s’ha transformat en un sistema dominat pel **capital de la núvol**, les plataformes i l’extracció de rendes.
+A partir del llibre *Tecnofeudalisme*, de Yanis Varoufakis, la sessió analitzarà la tesi segons la qual el capitalisme s’ha transformat en un sistema dominat pel **capital del núvol**, les plataformes i l’extracció de rendes.
 
 ## Ponent i presentació
 
@@ -29,7 +29,7 @@ Presentarà l’acte **Èric Sánchez**.
 Varoufakis defensa que les mutacions posteriors a la crisi financera de 2008 van reforçar enormement les grans empreses tecnològiques. Segons la seva proposta:
 
 - les plataformes digitals funcionen com a infraestructures privades de les quals depenen empreses, institucions i ciutadania;
-- els propietaris del «capital de la núvol» poden cobrar rendes per l’accés i la intermediació;
+- els propietaris del «capital del núvol» poden cobrar rendes per l’accés i la intermediació;
 - les persones usuàries alimenten aquests sistemes amb dades, continguts, atenció i activitat quotidiana;
 - el poder econòmic es combina amb una capacitat creixent per orientar el consum, la informació i el comportament;
 - la concentració tecnològica planteja problemes de desigualtat, sobirania i control democràtic.
