@@ -9,9 +9,9 @@ organizers:
   - AJUNTAMENT DE BREDA
 campaign: medi-ambient-i-territori.md
 format: xerrada
-status: proposada
+status: confirmada
 featured: false
-draft: true
+draft: false
 isPlaceholder: false
 ---
 # Títol
