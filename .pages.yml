@@ -1,0 +1,405 @@
+media:
+  - name: images
+    label: Imatges
+    input: public/images
+    output: /images
+    extensions: [jpg, jpeg, png, webp, gif, svg]
+    rename: safe
+
+  - name: calendaris
+    label: Calendaris
+    input: public/calendar
+    output: /calendar
+    extensions: [ics]
+    rename: safe
+
+content:
+  - name: actualitat
+    label: Continguts
+    type: collection
+    path: src/content/actualitat
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, type, publishedAt, draft, featured]
+      primary: title
+      sort: [publishedAt, title]
+      search: [title, summary, topics]
+      default:
+        sort: publishedAt
+        order: desc
+    fields:
+      - name: title
+        label: Títol
+        type: string
+        required: true
+        options:
+          maxlength: 140
+
+      - name: summary
+        label: Resum
+        type: text
+        required: true
+        description: Ha de poder entendre's de manera independent i ocupar, com a màxim, dues frases.
+        options:
+          maxlength: 420
+
+      - name: publishedAt
+        label: Data de publicació
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: updatedAt
+        label: Data d'actualització
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+
+      - name: type
+        label: Tipus de contingut
+        type: select
+        required: true
+        options:
+          values:
+            - name: noticia
+              label: Notícia
+            - name: comunicat
+              label: Comunicat
+            - name: cronica
+              label: Crònica
+            - name: article
+              label: Article
+
+      - name: topics
+        label: Temes
+        type: string
+        list: true
+
+      - name: featured
+        label: Destacat
+        type: boolean
+        default: false
+
+      - name: draft
+        label: Esborrany
+        type: boolean
+        default: true
+        description: Els esborranys no es mostren al web.
+
+      - name: isPlaceholder
+        label: Contingut d'exemple
+        type: boolean
+        default: false
+        hidden: true
+
+      - name: image
+        label: Imatge principal
+        type: image
+        options:
+          media: images
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+
+      - name: imageAlt
+        label: Text alternatiu de la imatge
+        type: string
+        description: Descriu breument la informació rellevant de la imatge. Deixa'l buit si no hi ha imatge.
+
+      - name: body
+        label: Contingut
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          switcher: true
+
+  - name: agenda
+    label: Agenda
+    type: collection
+    path: src/content/agenda
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, startDate, status, format, campaign, draft]
+      primary: title
+      sort: [startDate, title]
+      search: [title, summary, location, organizers]
+      default:
+        sort: startDate
+        order: desc
+    fields:
+      - name: title
+        label: Títol
+        type: string
+        required: true
+        options:
+          maxlength: 160
+
+      - name: summary
+        label: Resum
+        type: text
+        required: true
+        options:
+          maxlength: 420
+
+      - name: startDate
+        label: Data i hora d'inici
+        type: date
+        required: true
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+          step: 300
+
+      - name: endDate
+        label: Data i hora de finalització
+        type: date
+        default: ""
+        options:
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssxxx"
+          step: 300
+
+      - name: location
+        label: Lloc
+        type: string
+        required: true
+
+      - name: organizers
+        label: Organitza
+        type: string
+        list: true
+        default: [Breda Acció Solidària]
+
+      - name: campaign
+        label: Línia d'acció relacionada
+        type: reference
+        description: Deixa-ho buit quan l'activitat no pertanyi a cap línia d'acció concreta.
+        options:
+          collection: campanyes
+          search: "title,summary"
+          value: "{name}"
+          label: "{primary}"
+
+      - name: format
+        label: Format
+        type: select
+        required: true
+        options:
+          values:
+            - name: xerrada
+              label: Xerrada
+            - name: cineforum
+              label: Cinefòrum
+            - name: cercle-estudi
+              label: Cercle d'estudi
+            - name: debat
+              label: Debat
+            - name: taller
+              label: Taller
+            - name: jornada
+              label: Jornada
+            - name: passejada
+              label: Passejada
+            - name: manifestacio
+              label: Mobilització
+            - name: assemblea
+              label: Assemblea
+            - name: altres
+              label: Altres
+
+      - name: status
+        label: Estat intern
+        type: select
+        required: true
+        default: proposada
+        description: Només les activitats confirmades es mostren com a properes activitats.
+        options:
+          values:
+            - name: proposada
+              label: Proposada
+            - name: confirmada
+              label: Confirmada
+            - name: finalitzada
+              label: Finalitzada
+
+      - name: featured
+        label: Destacada
+        type: boolean
+        default: false
+
+      - name: draft
+        label: Esborrany
+        type: boolean
+        default: true
+        description: Activa-ho per impedir que es generi una pàgina pública.
+
+      - name: isPlaceholder
+        label: Contingut d'exemple
+        type: boolean
+        default: false
+        hidden: true
+
+      - name: image
+        label: Imatge o cartell
+        type: image
+        options:
+          media: images
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+
+      - name: imageAlt
+        label: Text alternatiu de la imatge
+        type: string
+
+      - name: externalUrl
+        label: Enllaç extern o inscripció
+        type: string
+        pattern:
+          regex: "^$|^https?://.+"
+          message: Introdueix una URL completa que comenci per http:// o https://.
+
+      - name: calendarFile
+        label: Fitxer de calendari (.ics)
+        type: file
+        options:
+          media: calendaris
+          extensions: [ics]
+
+      - name: body
+        label: Descripció completa
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          switcher: true
+
+  - name: campanyes
+    label: Línies d'acció
+    type: collection
+    path: src/content/campanyes
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: create
+    view:
+      fields: [title, status, startDate, featured, draft]
+      primary: title
+      sort: [title, startDate]
+      search: [title, summary, topics]
+      default:
+        sort: title
+        order: asc
+    fields:
+      - name: title
+        label: Títol
+        type: string
+        required: true
+        options:
+          maxlength: 160
+
+      - name: summary
+        label: Resum
+        type: text
+        required: true
+        options:
+          maxlength: 420
+
+      - name: status
+        label: Estat
+        type: select
+        required: true
+        options:
+          values:
+            - name: activa
+              label: Activa
+            - name: permanent
+              label: Permanent
+            - name: finalitzada
+              label: Finalitzada
+
+      - name: startDate
+        label: Data d'inici
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+
+      - name: endDate
+        label: Data de finalització
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+
+      - name: topics
+        label: Temes
+        type: string
+        list: true
+
+      - name: featured
+        label: Destacada a la portada
+        type: boolean
+        default: false
+
+      - name: draft
+        label: Esborrany
+        type: boolean
+        default: true
+
+      - name: isPlaceholder
+        label: Contingut d'exemple
+        type: boolean
+        default: false
+        hidden: true
+
+      - name: image
+        label: Imatge principal
+        type: image
+        options:
+          media: images
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+
+      - name: imageAlt
+        label: Text alternatiu de la imatge
+        type: string
+
+      - name: callToAction
+        label: Crida a participar
+        type: text
+
+      - name: relatedLinks
+        label: Recursos relacionats
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Text de l'enllaç
+            type: string
+            required: true
+          - name: url
+            label: URL
+            type: string
+            required: true
+            pattern:
+              regex: "^https?://.+"
+              message: Introdueix una URL completa que comenci per http:// o https://.
+
+      - name: body
+        label: Contingut
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: images
+          switcher: true
