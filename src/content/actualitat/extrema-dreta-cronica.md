@@ -4,6 +4,7 @@ summary: "Entre cinquanta i seixanta persones van assistir a una xerrada amb Car
 publishedAt: 2026-05-09
 type: cronica
 topics: ["Extrema dreta", "Antifeixisme", "Democràcia", "Breda"]
+campaign: "contra-extrema-dreta"
 featured: false
 image: "/images/poster-extrema-dreta.webp"
 imageAlt: "Cartell negre i vermell de la xerrada sobre extrema dreta celebrada a Breda"

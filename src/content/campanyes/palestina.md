@@ -1,5 +1,6 @@
 ---
 title: "Palestina: solidaritat, boicot i sensibilització"
+shortTitle: "Palestina"
 summary: "Una línia permanent de treball per defensar els drets del poble palestí, denunciar l'ocupació i promoure formes d'acció local."
 status: activa
 startDate: 2026-04-01

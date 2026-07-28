@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { formatDate, humanize } from '../../utils/format';
+import CampaignBadge from '../../components/CampaignBadge.astro';
 
 export async function getStaticPaths() {
   const items = await getCollection('actualitat', ({ data }) => !data.draft);
@@ -22,5 +23,18 @@ const { Content } = await render(item);
   image={item.data.image}
   imageAlt={item.data.imageAlt}
 >
+{
+  item.data.campaign && (
+    <p class="campaign-meta">
+      <CampaignBadge campaign={item.data.campaign} />
+    </p>
+  )
+}
   <Content />
 </ArticleLayout>
+
+<style>
+  .campaign-meta {
+    margin: 0 0 1.5rem;
+  }
+</style>

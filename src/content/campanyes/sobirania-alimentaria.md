@@ -1,5 +1,6 @@
 ---
 title: "Sobirania alimentària i biodiversitat agrícola"
+shortTitle: "Sobirania alimentària"
 summary: "Una línia de debat sobre control de les varietats, dependència dels agricultors, concentració econòmica i resiliència dels sistemes alimentaris."
 status: permanent
 topics: ["Agricultura", "Biodiversitat", "Economia", "Medi ambient"]

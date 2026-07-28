@@ -1,0 +1,45 @@
+---
+import { getEntry } from 'astro:content';
+import Badge from './Badge.astro';
+
+interface Props {
+  campaign?: string;
+}
+
+const { campaign } = Astro.props;
+
+const campaignEntry = campaign
+  ? await getEntry('campanyes', campaign)
+  : undefined;
+---
+
+{
+  campaignEntry && (
+    <a
+      class="campaign-link"
+      href={`/campanyes/${campaignEntry.id}/`}
+      title={`Línia d'acció: ${campaignEntry.data.title}`}
+    >
+      <Badge tone="strawberry">
+        {campaignEntry.data.shortTitle ?? campaignEntry.data.title}
+      </Badge>
+    </a>
+  )
+}
+
+<style>
+  .campaign-link {
+    display: inline-flex;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .campaign-link:hover {
+    filter: brightness(0.96);
+  }
+
+  .campaign-link:focus-visible {
+    outline: 3px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+</style>

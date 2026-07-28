@@ -18,6 +18,7 @@ const actualitat = defineCollection({
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     type: z.enum(['noticia', 'comunicat', 'cronica', 'article']),
+    campaign: z.string().optional(),
     topics: z.array(z.string()).default([]),
     image: z.string().optional(),
     imageAlt: z.string().optional(),
@@ -46,6 +47,7 @@ const campanyes = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/campanyes' }),
   schema: z.object({
     ...common,
+    shortTitle: z.string().optional(),
     status: z.enum(['activa', 'permanent', 'finalitzada']),
     startDate: z.coerce.date().optional(),
     endDate: z.coerce.date().optional(),

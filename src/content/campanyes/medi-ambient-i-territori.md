@@ -1,5 +1,6 @@
 ---
 title: "[Exemple] Medi ambient i territori"
+shortTitle: "Medi ambient"
 summary: "Activitats locals per observar, comprendre i defensar els ecosistemes, el paisatge i els béns comuns de Breda."
 status: permanent
 topics: ["Medi ambient", "Breda", "Biodiversitat", "Territori"]

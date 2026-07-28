@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Badge from './Badge.astro';
 import { formatDate, humanize } from '../utils/format';
+import CampaignBadge from './CampaignBadge.astro';
 
 interface Props {
   item: CollectionEntry<'actualitat'>;
@@ -20,6 +21,7 @@ const { item } = Astro.props;
   <div class="body">
     <div class="meta">
       <Badge tone="mint">{humanize(item.data.type)}</Badge>
+      <CampaignBadge campaign={item.data.campaign} />
       {item.data.isPlaceholder && <Badge tone="purple">Exemple</Badge>}
     </div>
     <h3><a href={`/actualitat/${item.id}/`}>{item.data.title}</a></h3>

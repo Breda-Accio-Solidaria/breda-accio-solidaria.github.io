@@ -4,6 +4,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import Badge from '../../components/Badge.astro';
 import { formatDateTime } from '../../utils/format';
 import { agendaFormatMeta } from '../../data/agenda';
+import CampaignBadge from '../../components/CampaignBadge.astro';
 
 export async function getStaticPaths() {
   const items = await getCollection('agenda', ({ data }) => !data.draft);
@@ -32,6 +33,16 @@ const formatMeta = agendaFormatMeta[item.data.format];
         </Badge>
       </dd>
     </div>
+    {
+      item.data.campaign && (
+        <div>
+          <dt>Línia d’acció</dt>
+          <dd>
+            <CampaignBadge campaign={item.data.campaign} />
+          </dd>
+        </div>
+      )
+    }
     <div><dt>Data i hora</dt><dd>{formatDateTime(item.data.startDate)}</dd></div>
     <div><dt>Lloc</dt><dd>{item.data.location}</dd></div>
     <div><dt>Organitza</dt><dd>{item.data.organizers.join(', ')}</dd></div>

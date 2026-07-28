@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import Badge from './Badge.astro';
 import { formatDateTime } from '../utils/format';
 import { agendaFormatMeta } from '../data/agenda';
+import CampaignBadge from './CampaignBadge.astro';
 
 interface Props {
   item: CollectionEntry<'agenda'>;
@@ -30,6 +31,7 @@ const month = new Intl.DateTimeFormat('ca-ES', {
       <Badge tone={formatMeta.tone}>
       {formatMeta.label}
     </Badge>
+    <CampaignBadge campaign={item.data.campaign} />
   </div>
     <h3><a href={`/agenda/${item.id}/`}>{item.data.title}</a></h3>
     <p>{item.data.summary}</p>

@@ -23,7 +23,7 @@ content:
       template: "{title}.md"
       field: create
     view:
-      fields: [title, type, publishedAt, draft, featured]
+      fields: [title, type, publishedAt, campaign, draft, featured]
       primary: title
       sort: [publishedAt, title]
       search: [title, summary, topics]
@@ -52,6 +52,16 @@ content:
         required: true
         options:
           format: yyyy-MM-dd
+
+      - name: campaign
+        label: Línia d'acció relacionada
+        type: reference
+        description: Deixa-ho buit quan el contingut no pertanyi a cap línia d'acció concreta.
+        options:
+          collection: campanyes
+          search: "title,shortTitle,summary"
+          value: "{name}"
+          label: "{primary}"
 
       - name: updatedAt
         label: Data d'actualització
@@ -290,7 +300,7 @@ content:
       template: "{title}.md"
       field: create
     view:
-      fields: [title, status, startDate, featured, draft]
+      fields: [title, shortTitle, status, startDate, featured, draft]
       primary: title
       sort: [title, startDate]
       search: [title, summary, topics]
@@ -304,6 +314,12 @@ content:
         required: true
         options:
           maxlength: 160
+
+      - name: shortTitle
+        label: Títol curt
+        type: string
+        options:
+          maxlength: 80
 
       - name: summary
         label: Resum

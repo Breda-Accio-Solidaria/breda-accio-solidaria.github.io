@@ -1,5 +1,6 @@
 ---
 title: "Contra l’extrema dreta i la normalització de l’odi"
+shortTitle: "Extrema dreta"
 summary: "Formació, debat i acció comunitària per comprendre els discursos autoritaris, identificar-ne les formes contemporànies i construir respostes democràtiques, solidàries i antiracistes."
 status: activa
 startDate: 2026-05-08
