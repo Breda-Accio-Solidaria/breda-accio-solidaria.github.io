@@ -6,6 +6,7 @@ topics: ["Cuba", "Solidaritat internacional", "Cooperació"]
 featured: false
 isPlaceholder: true
 callToAction: "Proposa una activitat, una campanya de suport material o una col·laboració amb entitats de solidaritat amb Cuba."
+draft: true
 ---
 
 La solidaritat amb el poble cubà és una de les finalitats fundacionals de BAS. Aquesta pàgina mostra una possible estructura per agrupar activitats i materials sobre Cuba.

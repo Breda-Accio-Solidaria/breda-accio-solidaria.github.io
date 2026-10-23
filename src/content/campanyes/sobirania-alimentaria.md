@@ -8,6 +8,7 @@ featured: true
 image: "/images/sobirania-alimentaria.webp"
 imageAlt: "Gràfica sobre sobirania alimentària"
 callToAction: "Comparteix experiències del territori, proposa persones convidades i participa en les activitats sobre agricultura, biodiversitat i economia."
+draft: true
 ---
 
 La sobirania alimentària defensa la capacitat de les comunitats per decidir sobre la producció, les llavors, el territori i la distribució dels aliments.

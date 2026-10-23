@@ -2,7 +2,7 @@
 title: "Tres maneres de donar suport a les flotilles cap a Gaza"
 summary: "Parlar de Palestina, practicar un boicot informat i llegir sobre la realitat palestina són tres accions accessibles per mantenir el suport."
 publishedAt: 2026-07-15
-type: noticia
+type: article
 campaign: "palestina"
 topics: ["Palestina", "Boicot", "Lectures", "Xarxes socials"]
 featured: true

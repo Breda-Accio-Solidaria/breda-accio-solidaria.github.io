@@ -7,6 +7,7 @@ topics: ["Cercle d'estudi", "Extrema dreta", "Prejudicis", "Democràcia"]
 featured: false
 image: "/images/cercle-estudi.webp"
 imageAlt: "Gràfica amb el text Cercle d'estudi, debat, lectura i pensament crític"
+draft: true
 ---
 
 El 2 de juliol, deu persones van participar en el primer cercle d'estudi del BAS. La sessió va partir d'una pregunta incòmoda però útil: **per què persones que es consideren bones poden reproduir prejudicis, exclusions o formes de violència?**

@@ -7,8 +7,8 @@ location: "Centre Cultural Els Forns, Breda"
 organizers: ["Breda Acció Solidària"]
 campaign: "contra-extrema-dreta"
 format: xerrada
-status: confirmada
-featured: true
+status: finalitzada
+featured: false
 draft: false
 ---
 

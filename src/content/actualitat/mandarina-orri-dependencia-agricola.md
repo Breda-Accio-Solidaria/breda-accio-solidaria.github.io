@@ -7,6 +7,7 @@ topics: ["Agricultura", "Sobirania alimentària", "Biodiversitat", "Economia"]
 featured: false
 image: "/images/sobirania-alimentaria.webp"
 imageAlt: "Gràfica amb el text Sobirania alimentària, biodiversitat, agricultura i poder econòmic"
+draft: true
 ---
 
 La mandarina Orri és apreciada pel sabor, la facilitat de pelar i la baixa presència de llavors. El seu èxit comercial també ofereix un cas útil per analitzar un problema més ampli: **qui controla les varietats agrícoles i en quines condicions poden cultivar-les els productors?**
