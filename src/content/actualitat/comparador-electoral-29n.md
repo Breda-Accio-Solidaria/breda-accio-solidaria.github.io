@@ -4,7 +4,7 @@ summary: "Presentem un comparador interactiu de propostes electorals de 2023 i v
 publishedAt: 2026-10-23
 type: comunicat
 featured: true
-image: "/images/comparador-29n.jpeg"
+image: "/images/comparador-29n.png"
 imageAlt: "Caps de llista eleccions 29-N."
 ---
 
