@@ -8,7 +8,7 @@ image: "/images/comparador-29n.png"
 imageAlt: "Caps de llista eleccions 29-N."
 ---
 
-De cara a les eleccions generals del **[29 de novembre de 2026](https://www.boe.es/eli/es/rd/2026/10/05/806)**, des del **BAS** hem preparat una eina interactiva per facilitar la consulta i la comparació de les propostes dels partits polítics i de la seva activitat parlamentària.
+De cara a les eleccions generals del **29 de novembre de 2026**, des del **BAS** hem preparat una eina interactiva per facilitar la consulta i la comparació de les propostes dels partits polítics i de la seva activitat parlamentària.
 
 La idea és senzilla: **no només interessa què proposen els partits, sinó també què han votat quan han tingut ocasió de posicionar-se al Congrés**. Per això hem reunit les dues fonts d'informació en un mateix comparador, accessible des del mòbil o l'ordinador.
 
@@ -43,3 +43,13 @@ Per elaborar el comparador hem utilitzat **eines d'intel·ligència artificial**
 El comparador és un recurs informatiu per facilitar una lectura crítica de les propostes i de l'activitat parlamentària. En cap cas és una recomanació de vot.
 
 **[Consulta el comparador electoral del BAS →](/comparador-29n/)**
+
+## Un altre comparador per aprofundir en els programes electorals
+
+També us recomanem visitar **[29N — Comparador de programes electorals](https://29nov.es/)**, una iniciativa independent que permet consultar milers de propostes dels partits polítics, classificades en 21 temàtiques.
+
+A diferència del nostre comparador, que ofereix una selecció de mesures i incorpora votacions parlamentàries, 29N permet **aprofundir en els programes electorals**, consultar les citacions originals de cada proposta i identificar la pàgina exacta del document d'on s'ha extret.
+
+La plataforma també incorpora informació sobre la metodologia utilitzada i preveu actualitzar les comparatives amb els programes de les eleccions de 2026.
+
+**[Consulta el comparador 29N](https://29nov.es/)**
