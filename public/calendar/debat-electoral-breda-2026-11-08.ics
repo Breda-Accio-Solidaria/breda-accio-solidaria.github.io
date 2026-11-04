@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Breda Acció Solidària//Agenda BAS//CA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:debat-electoral-breda-20261108@breda-accio-solidaria.github.io
+DTSTAMP:20261104T140433Z
+DTSTART;TZID=Europe/Madrid:20261108T120000
+DTEND;TZID=Europe/Madrid:20261108T140000
+SUMMARY:Debat electoral del 29-N a Breda
+LOCATION:L'Heura\, c/ Sant Antoni\, 9\, Breda
+DESCRIPTION:Debat electoral obert a la ciutadania organitzat per Breda Acció Solidària. Hi participaran el PSC\, Front Ampli i Esquerra. Junts i el PP han declinat la invitació. Vox no ha estat convidat.
+END:VEVENT
+END:VCALENDAR

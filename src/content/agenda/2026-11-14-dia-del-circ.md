@@ -8,7 +8,7 @@ organizers: ["Contaminando Sonrisas", "Breda Acció Solidària"]
 campaign: "contra-extrema-dreta"
 format: taller
 status: confirmada
-featured: false
+featured: true
 draft: false
 ---
 
