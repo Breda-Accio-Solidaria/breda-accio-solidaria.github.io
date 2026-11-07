@@ -2,8 +2,8 @@
 title: Debat electoral
 summary: Organitzem un debat electoral obert a la ciutadania amb la participació
   del PSC, Comuns–Front Ampli i Esquerra Republicana.
-startDate: 2026-11-08T10:00:00+00:00
-endDate: 2026-11-14T12:00:00+00:00
+startDate: 2026-11-08T12:00:00+00:00
+endDate: 2026-11-14T13:30:00+00:00
 location: Centre cívic
 organizers:
   - Breda Acció Solidària
