@@ -13,7 +13,6 @@ status: confirmada
 featured: true
 draft: false
 isPlaceholder: false
-calendarFile: /calendar/debat-electoral-breda-2026-11-08.ics
 ---
 # Debat electoral del 29-N a Breda
 
