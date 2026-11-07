@@ -1,18 +1,20 @@
 ---
-title: "Debat electoral"
-summary: "Organitzem un debat electoral obert a la ciutadania amb la participació del PSC, Comuns–Front Ampli i Esquerra Republicana."
-startDate: 2026-11-08T12:00:00+02:00
-endDate: 2026-11-14T14:00:00+02:00
-location: "L'Heura, C/Sant Antoni, 9, Breda."
-organizers: ["Breda Acció Solidària", "L'Heura coworking"]
-campaign: "contra-extrema-dreta"
+title: Debat electoral
+summary: Organitzem un debat electoral obert a la ciutadania amb la participació
+  del PSC, Comuns–Front Ampli i Esquerra Republicana.
+startDate: 2026-11-08T10:00:00+00:00
+endDate: 2026-11-14T12:00:00+00:00
+location: Centre cívic
+organizers:
+  - Breda Acció Solidària
+campaign: contra-extrema-dreta
 format: debat
 status: confirmada
 featured: true
 draft: false
-calendarFile: "/calendar/debat-electoral-breda-2026-11-08.ics"
+isPlaceholder: false
+calendarFile: /calendar/debat-electoral-breda-2026-11-08.ics
 ---
-
 # Debat electoral del 29-N a Breda
 
 Amb motiu de les eleccions generals del 29 de novembre de 2026, **Breda Acció Solidària organitza un debat electoral a Breda** per conèixer i contrastar les propostes de les diferents candidatures.
