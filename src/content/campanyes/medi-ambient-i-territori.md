@@ -1,15 +1,15 @@
 ---
-title: "[Exemple] Medi ambient i territori"
+title: "Medi ambient i territori"
 shortTitle: "Medi ambient"
 summary: "Activitats locals per observar, comprendre i defensar els ecosistemes, el paisatge i els béns comuns de Breda."
 status: permanent
 topics: ["Medi ambient", "Breda", "Biodiversitat", "Territori"]
-featured: false
-isPlaceholder: true
+featured: true
+isPlaceholder: false
 image: "/images/medi-ambient-territori.webp"
 imageAlt: "Gràfica verda sobre medi ambient i territori"
 callToAction: "Participa en les sortides, envia informació sobre problemes ambientals i proposa accions de sensibilització."
-draft: true
+draft: false
 ---
 
 La defensa del medi ambient és una de les finalitats del BAS. Aquesta campanya mostra com es pot estructurar una línia local de treball ambiental.

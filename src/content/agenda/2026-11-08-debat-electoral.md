@@ -9,7 +9,7 @@ organizers:
   - Breda Acció Solidària
 campaign: contra-extrema-dreta
 format: debat
-status: confirmada
+status: finalitzada
 featured: true
 draft: false
 isPlaceholder: false
